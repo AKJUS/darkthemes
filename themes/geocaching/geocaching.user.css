@@ -3,7 +3,7 @@
 @namespace      queengooborg
 @author         Vinyl Da.i'gyu-Kazotetsu [https://queengoob.org]
 @description    A dark theme for the Geocaching.com website, as well as a few other related websites (Waymarking.com, GeoCheck.org, GeoChecker.com, Certitudes.org, PathTags.com, and Project-GC.com).  Colors are adjustable via the variables set on :root.  https://www.queengoob.org/darkthemes
-@version        3.4.0
+@version        4.0.0
 @license        GPL-3.0
 ==/UserStyle== */
 
@@ -79,7 +79,7 @@
         color: var(--link-hover);
     }
     
-    a:visited {
+    a:visited, article a:visited, aside a:visited, div a:visited {
         color: var(--link-visited);
     }
 
@@ -125,8 +125,16 @@
         color: var(--foreground-invert) !important;
     }
     
+    *[style*="background: #f5f5f5;"] {
+        background-color: var(--background) !important;
+    }
+    
     *[style*="background-color:#EEEEEE;"], *[style*="background-color: #EEEEEE;"], *[bgcolor="#EEEEEE"] {
         background-color: var(--background-2) !important;
+    }
+    
+    .bg-\[\#edf2f7\], .even\:bg-\[\#ebeced\]:nth-child(even) {
+        background-color: var(--background-3) !important;
     }
     
     *[color="blue"], *[color="DarkBlue"], *[style*="color:blue"], *[style*="color: blue"], *[style*="color:DarkBlue"], *[style*="color: DarkBlue"], *[style*="color:#0000CC"], *[style*="color: #0000CC"], *[style*="color:#000099"], *[style*="color:#000099"], *[style*="color:#0000ff"], *[style*="color: #0000ff"] {
@@ -139,416 +147,341 @@
 }
 
 @-moz-document domain("geocaching.com") {
-    /* -=- Geocaching.com Styling -=- */
-    .main, body:not(.CacheDetailsPage) #Content, #Content .container, .CacheDetailsPage #Content .container, .structure, .content-slide .main, .hide-page-section, .hide-page-aside, .list-action-menu, .gc-modal-body, .page-size-controls .gc-select, .scroll-to-top .scroll-to-top-control, .reveal-modal, .layout-callout, table.Table tr.SolidRow td, .SolidRow, table.Table tr td.SolidRow, .callout, .language-dropdown .dropdown-menu, .sect-standout h2, .Sidebar, div.scrollbarpaper-container, div.scrollbarpaper-track, .LinkField .button, .cke_inner, .cke .cke_bottom, .cart-summary, .opc-block-summary, .opc-progress-bar-item > span:after, .search-bar, .sidebar-search-view, .sidebar-toggle, #search-filters, .cache-detail-preview, .gc-add-to-list .create-new-list-form-section .create-new-list-form, .pages strong.page, .ipsItemStatus.ipsItemStatus_large.ipsItemStatus_read, .ipsAreaBackground, .ipsTabs, .during-event-view .content-container .levels, .InformationWidget .Callout, #gc-search-typeahead-form input[type="search"], #gc-search-filters, .hentry, .structure .section-header, .ignore-header, section[data-testid="list-details-content"] header, .search-autocomplete ul:not(:empty), *[class^="search-results"], .bg-white, .search-results-5v52s > div, .page-container, #react-select-8-listbox, *[class^="listhub-"] .content, dialog header, *[class^="list-details-"], *[class^="list-details-"] .content, .list-details-1tf8mv9, .listhub-6h9smn .content, .css-r8580 .form-container {
-        background-color: var(--background);
-        color: var(--foreground);
+    /* Tailwind CSS Overwrites */
+    :root {
+        --color-bg-action-banner-success: #e6faeb;
+        --color-bg-app: var(--background);
+        --color-bg-compass: #00663d;
+        --color-bg-footer: #FFFFFF;
+        --color-bg-go-active: #00a15b;
+        --color-bg-go-active-pressed: var(--main);
+        --color-bg-go-box: #00a15b;
+        --color-bg-go-control: #b7edc6;
+        --color-bg-go-control-pressed: rgba(183,237,198,0.4);
+        --color-bg-go-header: var(--main);
+        --color-bg-go-primary: var(--main);
+        --color-bg-go-primary-active: #005432;
+        --color-bg-go-primary-disabled: #c7c7c7;
+        --color-bg-go-primary-pressed: #00a15b;
+        --color-bg-go-primary-web: var(--main);
+        --color-bg-go-secondary-active: var(--main-hover);
+        --color-bg-go-secondary-hovered: var(--main-hover);
+        --color-bg-go-secondary-pressed: var(--main);
+        --color-bg-grid-1: #e6faeb;
+        --color-bg-grid-2: #83d99f;
+        --color-bg-grid-3: #007d46;
+        --color-bg-grid-4: #005432;
+        --color-bg-grid-5: #003d25;
+        --color-bg-info-banner: #ebf6ff;
+        --color-bg-info-primary: var(--notice-bg);
+        --color-bg-info-primary-pressed: var(--notice-bg);
+        --color-bg-info-secondary-pressed: var(--notice-bg);
+        --color-bg-info-tooltip-primary-pressed: var(--notice-bg);
+        --color-bg-loading-end: rgba(225,225,225,0.5);
+        --color-bg-loading-start: rgba(225,225,225,0.2);
+        --color-bg-map-radius: rgba(178,43,20,0.3);
+        --color-bg-message-primary: #C2F2CE;
+        --color-bg-message-secondary: #f5f5f5;
+        --color-bg-neutral-banner: #f5f5f5;
+        --color-bg-neutral-box: var(--background-3);
+        --color-bg-neutral-box-secondary: var(--background-2);
+        --color-bg-neutral-control: var(--background-2);
+        --color-bg-neutral-control-active: var(--background-3);
+        --color-bg-neutral-control-inactive: var(--background-2);
+        --color-bg-neutral-dark-banner: rgba(0,0,0,0.6);
+        --color-bg-neutral-header: #f5f5f5;
+        --color-bg-neutral-secondary-pressed: var(--background-3);
+        --color-bg-neutral-upgrade-pressed: #FFFFFF;
+        --color-bg-page: var(--background-2);
+        --color-bg-ribbon-end: #326dbf;
+        --color-bg-ribbon-start: #D6137E;
+        --color-bg-stop-primary: var(--error-bg);
+        --color-bg-stop-primary-active: var(--error-bg);
+        --color-bg-stop-secondary: var(--error-bg);
+        --color-bg-stop-secondary-pressed: var(--error-bg);
+        --color-bg-table-disabled: rgba(255,255,255,0.38);
+        --color-bg-table-header: rgba(255,255,255,0.5);
+        --color-bg-widget-primary: var(--main);
+        --color-bg-widget-secondary: var(--main);
+        --color-fg-button-primary: #FFFFFF;
+        --color-fg-compass: #83d99f;
+        --color-fg-fill-primary: var(--main);
+        --color-fg-fill-secondary: #4cbf7a;
+        --color-fg-go-caption: #005432;
+        --color-fg-go-footer: var(--main);
+        --color-fg-go-header: #FFFFFF;
+        --color-fg-go-premium-star: #4cbf7a;
+        --color-fg-go-primary: var(--main);
+        --color-fg-go-secondary: var(--main-hover);
+        --color-fg-go-secondary-active: var(--main-hover);
+        --color-fg-go-tertiary: #00a15b;
+        --color-fg-go-upgrade-pressed: #4cbf7a;
+        --color-fg-grid-0: #000000;
+        --color-fg-grid-3: #FFFFFF;
+        --color-fg-grid-4: #FFFFFF;
+        --color-fg-info-primary: #2358a1;
+        --color-fg-info-secondary: #326dbf;
+        --color-fg-info-tag: #2358a1;
+        --color-fg-info-tertiary: #326dbf;
+        --color-fg-logo: var(--main);
+        --color-fg-neutral-box: #FFFFFF;
+        --color-fg-neutral-caption: #000000;
+        --color-fg-neutral-control: #FFFFFF;
+        --color-fg-neutral-control-active: var(--foreground);
+        --color-fg-neutral-footer: var(--foreground);
+        --color-fg-neutral-header: var(--foreground);
+        --color-fg-neutral-primary: var(--foreground);
+        --color-fg-neutral-primary-disabled: var(--foreground-disabled);
+        --color-fg-neutral-secondary: var(--foreground-2);
+        --color-fg-neutral-secondary-disabled: var(--foreground-disabled);
+        --color-fg-neutral-tertiary: var(--foreground-disabled);
+        --color-fg-stop-primary: #911808;
+        --color-fg-stop-secondary: #b22b14;
+        --color-fg-warning-primary: #b54b00;
+        --color-bd-disabled: #c7c7c7;
+        --color-bd-focused: #4a4a4a;
+        --color-bd-go-active: var(--main);
+        --color-bd-go-active-secondary: var(--main);
+        --color-bd-go-active-secondary-pressed: #00663d;
+        --color-bd-go-focused: var(--main);
+        --color-bd-go-secondary: var(--main);
+        --color-bd-info-secondary: #326dbf;
+        --color-bd-neutral-control: #8c8c8c;
+        --color-bd-neutral-divider: #e1e1e1;
+        --color-bd-neutral-divider-hovered: #c7c7c7;
+        --color-bd-neutral-scrollbar: #c7c7c7;
+        --color-bd-neutral-primary: #4a4a4a;
+        --color-bd-neutral-secondary: #6e6e6e;
+        --color-bd-neutral-statistics: rgba(140,140,140,0.5);
+        --color-bd-neutral-tertiary: #ababab;
+        --color-bd-neutral-upgrade-pressed: #c7c7c7;
+        --color-bd-stop-secondary: #b22b14;
     }
 
-    h2, h3, h4, h5, h6, footer, .rt-th, .rt-tbody .rt-tr .rt-td, .list-table .list-name a, .list-table .list-status .private, .list-table .list-status .public, .list-table .list-actions li a, .list-table .list-actions li button, .list-action-menu li, .list-action-menu li a, .list-action-menu li button, .list-action-menu li svg, .breadcrumb, .list-details .visibility-tag.private, .list-details .visibility-tag.public, .edit-description svg, .gc-labeled-select .gc-select select, .section-controls .control-group a, .section-controls .control-group button, .geocache-table th, .geocache-table .geocache-name, .edit-geocache-button svg, .character-count, .geocache-list .geocache-name, .minorCacheDetails, .message__owner a, .markdown-output p, .InformationWidget, .minorDetails, .minorDetails a, .sidebar-links a, .user-bio .bio-meta span, .activity-item a, .btn-list-add-cache, .responsive-table-menu button.toggle, .ui-widget-content a, .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a:link.ui-button, a:visited.ui-button, .ui-button, .hax-profile .profile-meta .meta-label, .submenu a, .submenu a, .submenu a:visited, .submenu form, .BreadcrumbWidget a:visited, #cpMsgLogHead h1, .conversation-panel .activity-item.selected, .conversation-panel .activity-item.disabled.selected, .btn-icon, .page-info, .BreadcrumbWidget, .empty-list, .hero-gift, .disclaimer, #gc-header .dropdown-menu a, #gc-header .dropdown-menu button, .headerContainer header .logo, .headerContainer header .logo:hover, .headerContainer header .logo:focus, .buttonField .imageBtn, .contentBox .listItem a, nav a, nav a:link, nav a:visited, .edit-cache-coordinates, nav .profile-panel .submenu a, .profile-panel .submenu button, .qtip-actions a:link, .qtip-actions a:visited, .logo-usage-widget, .activity-tray a, .btn.btn-secondary, .homepage-section a, .whats-new-option, .selectric .label, .gameplay-list-item .details .name, .flatpickr-calendar .flatpickr-month, .flatpickr-calendar .flatpickr-day, .pagination-controls .pagination-control, legend, .language-dropdown .dropdown-menu li a, .hero .details h1, .submenu a:not(.btn), .submenu button, .Sidebar p, .ipsType_pageTitle, .add-list li button, .cke .cke_reset_all, .cke .cke_reset_all *, .cke .cke_reset_all a, .cke .cke_reset_all textarea, .abs-product-link, .product-item-name, .product.name a, .bundle-options-container .block-bundle-summary .product-addto-links > .action, .product-item-actions .actions-secondary > .action, .product-social-links .action.tocompare, .wishlist.split.button > .action.split, .product-social-links .action.mailto.friend, .product-social-links .action.towishlist, .block-bundle-summary .action.towishlist, .product-item .action.towishlist, .table-comparison .action.towishlist, .filter-options-content a, .sorter-action:before, .widget .footer-links a, .non-co-banner, .btn-reset, .navigation .level0 .submenu a, .product-item-name > a, .product.name a > a, .compare.wrapper .counter.qty, .paypal-review .table-paypal-review-items .col.price .price-including-tax, .paypal-review .table-paypal-review-items .col.price .price-excluding-tax, .paypal-review .table-paypal-review-items .col.subtotal .price-including-tax, .paypal-review .table-paypal-review-items .col.subtotal .price-excluding-tax, .cart.table-wrapper .col.price .price-including-tax, .cart.table-wrapper .col.price .price-excluding-tax, .cart.table-wrapper .col.subtotal .price-including-tax, .cart.table-wrapper .col.subtotal .price-excluding-tax, .cart.table-wrapper .col.msrp .price-including-tax, .cart.table-wrapper .col.msrp .price-excluding-tax, .order-details-items .col.price .price-including-tax, .order-details-items .col.price .price-excluding-tax, .order-details-items .col.subtotal .price-including-tax, .order-details-items .col.subtotal .price-excluding-tax, .opc-wrapper .step-title, .opc-block-shipping-information .shipping-information-title, .opc-block-summary > .title, .checkout-agreements-items .checkout-agreements-item-title, .opc-progress-bar-item > span, .modal-custom .action-close:before, .modal-popup .action-close:before, .modal-slide .action-close:before, .abs-product-link > a:visited, .product-item-name > a:visited, .product.name a > a:visited, .cart.table-wrapper .actions-toolbar > .action-edit:before, .cart.table-wrapper .actions-toolbar > .action-delete:before, .minicart-wrapper .action.showcart:before, .minilist .action.delete:before, .minicart-items .action.edit:before, .minicart-items .action.delete:before, .minicart-wrapper .action.showcart.active:before, .minicart-wrapper .action.close:before, .sort-option-menu-toggle, .layer-control-option .label-name, #search-filters-controls button, #search-filters .heading-filter, #search-filters .search-filter-group label, .selected-filters h3, .selected-filters .btn, .pop-modal label, .cache-preview-header .status-and-type, .cache-preview-header .status, .cache-preview-header .cache-metadata, .cache-preview-header .more-info-link, .cache-preview-header .more-info-link:visited, .cache-preview-action-menu ul a, .cache-preview-action-menu ul a:visited, .cache-preview-action-menu ul button, .cache-preview-attributes .favorites-points, .cache-preview-attributes .geocache-owner > span, .cache-activity-log .type-and-date, .selectize-dropdown-content > [data-selectable], #create-new-list-textfield-header, .gc-add-to-list .existing-lists-header, .gc-add-to-list .existing-list .gc-button, .gc-add-to-list .create-new-list-form-section .create-new-list-textfield, #gc-footer .language-popover button, .language-dropdown .label, .features-chart td, .user-bio .bio-userrole, a.log-drafts-link, a.log-drafts-link:hover, form dt .required, .ipsBreadcrumb [data-action="defaultStream"], .ipsBreadcrumb [data-action="markSiteRead"], #ipsLayout_footer a, #ipsLayout_footer p, .ipsType_sectionHead, .ipsType_richText, .ipsType_light, .ipsStreamItem_snippet .ipsType_richText, .ipsQuote_citation, .ipsPager_type, .ipsPager .ipsPager_next a:after, .ipsPager .ipsPager_prev a:after, .link__back-to, .menu-toggle, .promo-header .promo-dates, .level-section .level-description .description, .bonus-round .description, .bonus-round .all-collected-cta, .content-display, .post-feed .post-item .post-tags p, .shop-item .shop-title, .mode-toggles li button, .list-details .list-meta, .upvotes button, .gc-autocomplete .gc-autocomplete-menu li, .gc-user-typeahead-label, .tooltip-header, .gc-selection-toggle-container, .gc-chip .chip-label, .gc-chip .chip-close .chip-close-icon, .gc-selected-filters-label, .gc-pagination .pagination li a, .gc-pagination .pagination li a, .gc-search-results-list-item, .geocache-name, .search-bar-back-cta, .main-profile-panel .username, .main-profile-panel .li-user-toggle, .logs-wrapper .log-date, .logs-wrapper .button-delete, .markdown-output ul, .markdown-output ol, .layer-control-options, .layer-control-options .layer-control-options-header button, .layer-control-options ul li button, .css-1ta83yk .post-item .post-tags p, .gc-labeled-select .gc-select select+svg, .cache-menu .toggle-menu-cta, .qtip-content a:link, .qtip-content a:visited, .customer-welcome li a, .customer-welcome li a:hover, .customer-welcome li a:visited, .block-collapsible-nav .item a, .block-collapsible-nav .item>strong, .list-item-meta-data li span, .countdown-container~.countdown-info, .ipsMenu_item > a:not( .ipsMenu_itemInline ), .ipsMenu_item > span:not( .ipsMenu_itemInline ), .ipsType_veryLarge, .legal #main-content, body .navigation .level0 .submenu a, body .promo-banner-top a, .page-footer .footer.content .block .footer-links-groups ul.footer-links a, .search-results-w96gy1 .homepage-section a, .text-grey-500, #whats-new-root .whats-new-option, div[class^="search-results-"], .mantine-rk2l8j, .listhub-13fyr4r button, .search-map-page-cuoxv4.reverse {
-        color: var(--foreground);
-    }
-
-    a:visited, .list-details-ratings a:visited, .list-description a:visited, .list-meta a:visited, .section-description a:visited, .section-meta a:visited, .section-title a:visited {
-        color: var(--link-visited);
-    }
-
-    .profile-panel a, .search-option-list-item span, .text-grey-500 {
-        color: var(--foreground) !important;
-    }
-
-    span.flatpickr-weekday, .product-item-info:hover .product-item-link, .bundle-options-container .block-bundle-summary .product-addto-links > .action:hover, .product-item-actions .actions-secondary > .action:hover, .product-social-links .action.tocompare:hover, .wishlist.split.button > .action.split:hover, .product-social-links .action.mailto.friend:hover, .product-social-links .action.towishlist:hover, .block-bundle-summary .action.towishlist:hover, .product-item .action.towishlist:hover, .table-comparison .action.towishlist:hover, .sorter-action:hover:before, .filters-toggle .btn-show:hover, .product-options-bottom .price-box, .product-info-price .price-box, .product-info-main .product-info-price, .compare.wrapper .action.compare, .compare.wrapper .action.compare:hover, .abs-product-link > a:hover, .product-item-name > a:hover, .product.name a > a:hover, .opc-progress-bar-item._active > span, .modal-custom .action-close:hover:before, .modal-popup .action-close:hover:before, .modal-slide .action-close:hover:before, .navigation .level0 .submenu .active > a, .cart.table-wrapper .actions-toolbar > .action-edit:hover:before, .cart.table-wrapper .actions-toolbar > .action-delete:hover:before, .minicart-wrapper .action.showcart:hover:before, .minicart-items .action.edit:hover:before, .minicart-items .action.delete:hover:before, .minicart-wrapper .action.showcart.active:hover:before, .minicart-wrapper .action.close:hover:before, .sort-option-menu-toggle span, .cache-preview-header h1, .cache-preview-attributes .geocache-owner > span > span, .cache-activity-log .username, .cache-activity-log .username:visited, .selectize-dropdown-content > [data-selectable].active, .search-option-list-item mark, .chip .chip-label, .cta-upgrade, .payment-progress .indicator-success, .user-bio .bio-username, .ipsNavBar_secondary > li.ipsNavBar_active a, .ipsNavBar_secondary > li > a:hover, .ipsBreadcrumb > ul > li, .ipsQuote .ipsQuote_citation a, .ipsTabs_activeItem:hover, .ipsType_huge, .submenu .link-text, .promo-title, .post-feed .post-item .post-header, .list-details-left, .list-details-right, .sort-component-item button, #gc-search-typeahead-form input[type="search"], .floating-header, .gc-search-results-hero, .geocache-name .name-display a, button.search-bar-back-cta:hover, .lang-dropdown-btn, .facebook-btn:hover, .main-profile-panel .li-user-toggle:hover, .main-profile-panel .li-user-toggle:focus, .markdown-output h2, .markdown-output h3, .markdown-output h4, .markdown-output h5, .markdown-output h6, .css-1ta83yk .post-item a, .qtip-content a:link:hover, .qtip-content a:visited:hover, .qtip-content button:hover, h1, h2, h3, h4, h5, h6, .LogEntryText span[id*=WaypointLog], .markdown-output span.WaypointLog, .block-collapsible-nav .item.current a, .block-collapsible-nav .item.current>strong, .list-item-name a, .read-about-geotours, a.ipsType_sectionTitle, .ipsType_sectionTitle a, .btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus, .ipsMenu_title, .ipsDialog_title, body .header.content .minicart-wrapper .action.showcart:before, body .page-header .block.block-search .actions .action.search:before, .cms-block-adventure .pagebuilder-column .pagebuilder-button-link, .copyright a, .oauth-providers-login a, #gc-footer a, .filter-group .filter-container label, .banner .wrapper a, .listhub-table .list-name-cell a, .listhub-table .status-display.private, .listhub-table .list-actions a:not(.list-action-menu a), .listhub-table .list-actions button:not(.list-action-menu button), .listhub-table .list-actions li:not(.list-action-menu li) {
-        color: var(--foreground-2);
-    }
-
-    .li-user a, .player-profile, a.CoordInfoLink span.CoordInfoCode, .message-center, .listhub-8op7mz .list-action-cta, .listhub-8op7mz .list-action-cta.delete-cta {
-        color: var(--foreground-2) !important;
-    }
-
-    .CacheInformationTable, div.favorite-container, div.favorite-container-open, .CacheDetailNavigation, table.Table tr.AlternatingRow td, .AlternatingRow, table.Table tr td.AlternatingRow, .alternating-row-stacked tr:nth-child(4n + 3) td, .alternating-row-stacked tr:nth-child(4n) td, .edit-inline .formatted:hover, .user-bio, .sidebar-links, .hax-profile .profile-panel, #cpConvoPanelFeed, #cpTextContent, #gc-header .dropdown-menu:after, .CacheDetailNavigation ul, .CacheDetailNavigation dl, .LogTrackablesTable tr.TableFooter td, .language-dropdown .dropdown-menu li a:hover, .columns .column, .profile-panel .submenu::after, .list-filters-popover, .multi-select-action-bar, .pop-modal, .cke .cke_top, .toggle-handle, .product.data.items > .item.title > .switch, .cart.main.actions, .modal-slide .modal-inner-wrap, .modal-popup .modal-inner-wrap .opc-progress-bar-item > span:after, .opc-progress-bar-item._active > span:after, .opc-progress-bar-item._complete:hover:before, .opc-progress-bar-item._complete:hover > span:before, .geocache-item:hover, .layer-control-option button:hover, .cache-preview-description .hint-text, #gc-footer .language-popover, .profile-panel ul, .ipsNavBar_primary > ul > li.ipsNavBar_active > a, .ipsNavBar_primary:not( .ipsNavBar_noSubBars) > ul:before, #ipsLayout_header nav, .ipsTabs_item, .ipsSideMenu_item:not( .ipsSideMenu_itemActive) a:hover, a.ipsSideMenu_item:not( .ipsSideMenu_itemActive):hover, span.ipsSideMenu_item:not( .ipsSideMenu_itemActive):hover, #elSearchExpanded .ipsSideMenu_list, .site-header, .app-section, .wp-content-section, .activity-message, .upvotes button:not([disabled]):hover, .typeahead-item, .gc-search-results-list-item.disabled, .gc-scroll-to-top .scroll-to-top-control, header, .home-callout, .panel, .css-j9jqw0 .trackable-filter button, .content-area .widget, .sidebar-area .widget, .page-header, .pagination, .search-results-popover .Popover-body, .page-header .panel.wrapper, .customer-welcome ul li:hover, .block-collapsible-nav .content, footer, .ipsDialog > div, .legal #main-content .personal-info-categories tr td:nth-child(1), .legal #main-content table thead tr td, .table tfoot, .order-details-items tfoot td, .css-8qkjl6, .hero-search-bar-control, .css-1x8hrwd .form-container, *[class^="listhub-"] td, .search-map-page-5v52s > div, .leaflet-control-container .leaflet-bottom .leaflet-control-attribution, .list-details-13pvnvu td, .list-details-13pvnvu td.list-geocache-details .list-details-qg9tjt {
-        background: var(--background-2);
-        color: var(--foreground);
-    }
-
-    div.favorite-dropdown, div.rating-dropdown, .panel-header, .panel-body, .widget-panel, .action-link, .activity-item, .activity-tray, .panel .activity-item, .suggestions, .list-controls, .search-results-table, .sticky .list-controls, .search-results-table th, .submenu, .submenu::after, .ui-widget-content, .hax-tabs, .hax-tabs li a, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active, .callout-box, .settings-content, .window-box.default, .callout .window-box, .SeekCacheWidget .WidgetBody, .HideCacheWidget .WidgetBody, .GeoTourAwardsWidget, .ResourcesWidget, .prev-profile-gallery.WidgetBody, .statistics-settings, .pq-info-wrapper, .pq-legend, .validation-form-wrapper, .CacheDetailNavigationWidget .WidgetBody, #cpMsgLogHead, #cpMsgLogFeed, #cpMsgLogFeed ol, #cpMsgEditor, #cpMsgEditor > div #cpAttachmentUpload > div, #cpEditControls, #cpMsgEditor > div, .SecondaryInformationWidget, .layout-callout .callout, #gc-header .dropdown-menu, #gc-header .dropdown-menu .has-icon a, .contentBox, .main .log-view-wrapper, .selectric, .selectric-items, .qq-gallery .qq-upload-drop-area, .qq-upload-extra-drop-area, .qq-gallery .qq-upload-drop-area .qq-drop-area-text, .flatpickr-calendar, .nav, .Banner, .dt-info .inner, .toolbar-products, .navigation .level0 .submenu, .minicart-wrapper .block-minicart, .abs-revert-to-action-secondary, .paypal-review .block .actions-toolbar .action.primary, .abs-discount-block .actions-toolbar .action.primary, .abs-discount-block .actions-toolbar .action.cancel, .block-compare .action.primary, .cart-summary .block .actions-toolbar > .primary .action.primary, .abs-discount-code .form-discount .actions-toolbar .primary .action, .cart-summary .form.giftregistry .fieldset .action.primary, .paypal-review-discount .actions-toolbar .action.primary, .paypal-review-discount .actions-toolbar .action.cancel, .cart-discount .actions-toolbar .action.primary, .cart-discount .actions-toolbar .action.cancel, .checkout-payment-method .payment-option-content .form-discount .actions-toolbar .primary .action, .search-term-form button, .search-term-form button:focus, .map-cta, .map-cta:active, .map-control, .zoom-control button, .ReactModal__Content, .search-option-list-item, #search-filters-controls, .cache-preview-attributes, .cache-open-text-cta, .cache-preview-activities, .cache-preview-description, .selectize-dropdown, .user-typeahead-list, .gc-add-to-list, .prompt, .YourProfileWidget, .ipsMenu, .ipsBox:not( .ipsBox_transparent):not( .ipsModerated), .ipsAreaBackground_reset, .ipsStreamItem.ipsStreamItem_contentBlock, .ipsApp .ipsButton_light, #elSearch, #elSearchExpanded, .mdd_resizer, .site-bar, .promo-intro, .how-to-play, .during-event-view .content-container, .post-feed .post-item, .mode-toggle-container, .dismiss-active-list-button, .mode-toggles, .gc-search-filters-header, .filter-container, .search-results-control, .gc-pagination .pagination li a:hover, .search-bar.v3, .geocache-action-bar, #sidebar-group, .meta--adventure, .facebook-btn, .login-form, .logs-wrapper .epic, .error-wrapper, .list-cache-navigation, .block.newsletter:before, .list-item-container, .geotour.list-item-container, .geotours-widget, .leaderboard-game-board>header, .leaderboard-game-board, .leaderboard-info-tile, .leaderboard-table, .ipsSelectTree, .ipsSelectTree_nodes, .ipsApp .cke_wysiwyg_frame, .ipsApp .cke_wysiwyg_div, [data-ipseditor], .order-links .item a, .order-links .item strong, .filter-group .filter-container, .rc-md-editor .editor-container .sec-md .input {
-        background: var(--background-2);
-        color: var(--foreground);
-        border-color: var(--background-3);
-    }
-
-    .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover, .conversation-panel .activity-item.selected, .conversation-panel .activity-item.disabled.selected, .filters-toggle .btn-show:hover, .navigation ul, .rc-slider-rail, .opc-progress-bar-item._active:before, .opc-progress-bar-item._active > span:before, .noUi-connect, .noUi-handle, .cache-preview-attributes .box-fill, #gc-footer .language-popover button:hover, #gc-footer .language-popover button.is-active, .solution-success, .mode-toggles li.active {
-        background: var(--main);
-        border-color: var(--main);
-    }
-
-    .section-controls, .CacheInformationTable .LocationData, .suggestions li.active, .suggestions li:hover, .responsive-table-modal li.selected button, .LogImagesTable, .markdown-output .LogImagesTable, .StatsSectionHeader, .nav-settings.expanded a:hover, .notifications-wrapper .form-item, .email-wrapper li .address, .conversation-panel .activity-item:focus, .conversation-panel .activity-item:hover, #gc-header .dropdown-menu a:hover, table.Table tr.InsetRow td, .InsetRow, table.Table tr td.InsetRow, .selectric-items li.selected, .selectric-items li:hover, .flatpickr-calendar .flatpickr-day.inRange, .flatpickr-calendar .flatpickr-day.prevMonthDay.inRange, .flatpickr-calendar .flatpickr-day.nextMonthDay.inRange, .flatpickr-calendar .flatpickr-day.today.inRange, .flatpickr-calendar .flatpickr-day.prevMonthDay.today.inRange, .flatpickr-calendar .flatpickr-day.nextMonthDay.today.inRange, .flatpickr-calendar .flatpickr-day:hover, .flatpickr-calendar .flatpickr-day.prevMonthDay:hover, .flatpickr-calendar .flatpickr-day.nextMonthDay:hover, .flatpickr-calendar .flatpickr-day:focus, .flatpickr-calendar .flatpickr-day.prevMonthDay:focus, .flatpickr-calendar .flatpickr-day.nextMonthDay:focus, .LogOptionsWidget, .language-dropdown .dropdown-menu .selected, .nav .active, .nav a:hover, .nav a:focus, div.scrollbarpaper-drag, .list-filters-popover ul li.selected-filter, .list-filters-popover ul li:hover, .nav-settings .active a, .products-grid .product-item-info:hover, .products-grid .product-item-info.active, .filter-options-content a:hover, .product.data.items > .item.content, .CoordChecker, .product.data.items > .item.title:not(.disabled) > .switch:focus, .product.data.items > .item.title:not(.disabled) > .switch:hover, .product.data.items > .item.title:not(.disabled) > .switch:active, .product.data.items > .item.title.active > .switch, .product.data.items > .item.title.active > .switch:focus, .product.data.items > .item.title.active > .switch:hover, .opc-progress-bar-item:before, .opc-progress-bar-item > span:before, .abs-revert-secondary-color:hover, .abs-revert-to-action-secondary:hover, .paypal-review .block .actions-toolbar .action.primary:hover, .abs-discount-block .actions-toolbar .action.primary:hover, .abs-discount-block .actions-toolbar .action.cancel:hover, .block-compare .action.primary:hover, .cart-summary .block .actions-toolbar > .primary .action.primary:hover, .abs-discount-code .form-discount .actions-toolbar .primary .action:hover, .cart-summary .form.giftregistry .fieldset .action.primary:hover, .paypal-review-discount .actions-toolbar .action.primary:hover, .paypal-review-discount .actions-toolbar .action.cancel:hover, .cart-discount .actions-toolbar .action.primary:hover, .cart-discount .actions-toolbar .action.cancel:hover, .checkout-payment-method .payment-option-content .form-discount .actions-toolbar .primary .action:hover, .sidebar-toggle:hover, #add-to-list-menu, .map-control:focus, .map-control:active, .map-control.is-open, .layer-control.is-open, .Popover-body, .search-option-list-item:hover, .search-option-list-item.active, .TopScroll .btn, .scroll-to-top .btn, .cache-preview-header, .cache-preview-description .hint-text.is-visible, .selectize-control.multi .selectize-input > div, .selectize-dropdown-content > [data-selectable].active, .user-typeahead-list .user-typeahead-list-item.active, .user-typeahead-list .user-typeahead-list-item:hover, .chip, .pages .action, .YourProfileWidget h3, .statbox, .HomeLocationSearch, .ipsType_sectionTitle, .ipsItemStatus.ipsItemStatus_large, .ipsStreamItem_time, .ipsStream .ipsStreamItem_contentType, .ipsQuote, .ipsApp .ipsButton_light:hover, .ipsFollow .ipsCommentCount, .ipsTabs_activeItem, .ipsTabs_panel, .ipsTabs_item:not( .ipsTabs_activeItem):hover, #elSearchExpanded .ipsMenu_title, .IconButton:hover, .submenu a:hover, .submenu form:hover, .level-section .title, .level-section .level-description, .article-tile header, .shop-item-link, .sort-component-item:hover, .sort-component-item button:hover, .mode-toggles li.active button:focus, .mode-toggles li.inactive button:focus, .filter-group-header, .gc-autocomplete .gc-autocomplete-menu, .gc-checkbox-control.hovered, .gc-toggle-control .toggle-control-label:hover, .gc-radio-control-v2.hovered, .gc-chip, .gc-search-results-list-item, .mode-toggles li button:hover, .lang-content, .css-j9jqw0 .trackable-filter button:hover, .css-1hbp4fm .popover, .gc-labeled-select .gc-select, .souvenirs-list-section-controls .sort-select-group select, .existing-list:hover, .customer-welcome ul, .block-collapsible-nav .item a:hover, .privacy-tooltip, .ipsNavBar_secondary, #ipsLayout_header nav::after, .leaderboard-item:hover .summary, .leaderboard-item.active .summary, .order-links .item a, body .promo-banner-top, .cms-block-no-gallery .item .content, .filter-group .filter-group-header, div[class$="-menu"], .mantine-e0bspt, .mantine-1h2qy2u, .rc-md-editor .rc-md-navigation, .search-map-page-1h73r4y .gc-radio-control-v2.hovered, .search-map-page-r9t41n .map-control, .leaflet-control-scale-line {
-        background: var(--background-3);
-        color: var(--foreground);
-    }
-
-    .search-results-table tr.disabled td, .conversation-panel .activity-item.disabled, .dt-info .locked-treasure, .zoom-control button:disabled {
-        background: var(--background-4);
-        border-color: var(--background-2);
-    }
-    
-    button.gc-button:hover, .gc-checkbox-v2 input:hover + span::before {
-        background-color: var(--main-hover);
-    }
-    
-    .hover\:bg-green-100:hover {
-        background-color: var(--main-dark) !important;
-    }
-
-    .search-bar .filter-toggle, .gc-filter-toggle, .zoom-control button:focus, .zoom-control button:active {
-        background: var(--background-2) !important;
-        color: var(--foreground) !important;
-    }
-
-    .cache-attributes li button, #attribute-filter-group ul.cache-attributes li button, .filter-group .option-icon, .btn-oauth-google > span {
-        color: var(--background-4);
-    }
-
-    .cache-attributes li button.marked, #attribute-filter-group ul.cache-attributes li button.marked {
-        color: var(--background-cache-button-selected);
-    }
-
-    .nav-settings.expanded .btn, .search-results-control:hover {
-        background: var(--background-2);
-    }
-
-    .alert, .alert.alert-info {
-        background: var(--background-alert);
-        color: var(--foreground);
-    }
-
-    .alert.alert-error {
-        background: var(--error-bg);
-    }
-
-    .alert.alert-success {
-        background: var(--background-alert-success);
-    }
-
-    .submenu a:hover, .submenu button:hover {
-        background: var(--background-3);
-    }
-
-    .qtip-light {
-        background-color: var(--background);
-        color: var(--foreground);
-        border-color: var(--border);
-    }
-
-    .Popover-tip polygon {
-        fill: var(--background-3);
-    }
-
-    .list-details-section-controls select, #LeaderboardMain, .page-container, .bg-white, .after\:bg-white:after {
+    .bg-white, .bg-white\/95, .bg-\[\#f9fafb\] {
         background-color: var(--background) !important;
     }
     
-    .bg-grey-50 {
+    .bg-white\/\[\.38\] {
+        background-color: rgba(0 0 0 /.38) !important;
+    }
+    
+    .bg-grey-50, .bg-gray-50, .hover\:bg-gray-50:hover, .has-\[a\:hover\]\:bg-white:has(a:hover) {
         background-color: var(--background-2) !important;
     }
     
-    .bg-grey-100, *[class^="search-map-page-"] .gc-button {
+    .bg-grey-100, .bg-gray-100, .hover\:bg-grey-100:hover, .hover\:bg-gray-100:hover {
         background-color: var(--background-3) !important;
     }
     
     .bg-blue-50, .hover\:bg-blue-50:hover {
-        background: var(--notice-bg) !important;
+        background-color: var(--notice-bg) !important;
     }
-
-    .gc-modal-body ul.gc-modal-buttons .secondary button, .text-grey-600\/45 {
+    
+    .bg-green-100, .hover\:bg-green-100:hover {
+        background-color: var(--main-dark) !important;
+    }
+    
+    .text-grey-500, .text-gray-500, .text-grey-600, .text-gray-600, .tablet\:text-grey-600, .tablet\:text-gray-600, .hover\:text-gray-600:hover {
+        color: var(--foreground-2) !important;
+    }
+    
+    .text-grey-600\/45, .text-gray-600\/45 {
         color: var(--foreground) !important;
     }
     
-    #LeaderboardMain h1.title, .text-grey-600 {
-        color: var(--foreground-2) !important;
-    }
-
-    .delete-list-cta {
-        color: var(--error) !important;
+    .disabled\:text-grey-600\/45:disabled, .disabled\:text-gray-600\/45:disabled {
+        color: var(--foreground-disabled) !important;
     }
     
-    .text-blue-500, .text-blue-600 {
-        color: var(--link) !important;
+    .placeholder-grey-500::placeholder, .placeholder-gray-500::placeholder {
+        color: var(--foreground-disabled) !important;
     }
     
-    .text-green-500 {
-        color: var(--main) !important;
+    .text-blue-600, .text-blue-700 {
+        color: var(--notice) !important;
     }
-
-    .clickable-table-header.disabled, .old-price, .old.price, .data.switch .counter, .product-item .price-box .price-label, .gc-search-results-list-item.disabled, .typeahead-item-content.is-geocache a {
-        color: var(--foreground-disabled);
+    
+    .text-green-600, .text-green-700 {
+        color: var(--main-hover) !important;
     }
-
-    .cssfilters .pop-modal.sit-right:before, .cssfilters .pop-modal.sit-right:after {
-        border-right-color: var(--background-2);
+    
+    .border-white {
+        border-color: var(--border) !important;
     }
-
-    .products-grid .product-item-inner, .products-grid .product-item-inner:before, .search-results-1p3m7a8-multiValue {
-        background: var(--background-3) !important;
+    
+    .\[box-shadow\:0_0_0_1px_theme\(colors\.white\/25\)\] {
+        box-shadow: 0 0 0 1px rgb(0 0 0 /25) !important;
     }
-
-    #cpTextContent, .LinkField .button, .LinkField input, .page-header .panel.wrapper, .reveal-modal.search-filters .checkbox-segments, .reveal-modal.search-filters .checkbox-segments .checkbox, .reveal-modal.search-filters .status-segments .checkbox, #search-filters .search-filter-group label, #search-filters .search-filter-group ul, .shop-item-link, #gc-search-typeahead-form .inner-wrapper input[type="search"] {
-        border-color: transparent;
+    
+    /* Manual Overrides */
+    
+    /* - General Elements */
+    
+    .page-container, #Content, #Content .container, .callout, .layout-callout, #react-select-8-listbox, *[class*="listhub-"], *[class*="list-details-"], .ui-widget-header, #fancybox-outer, .fancybox-title-inside {
+        background-color: var(--background);
+        color: var(--foreground);
     }
-
-    hr, .hide-page-section, .hide-page-aside, .flatpickr-calendar.open, .LogTrackablesTable tr.TableFooter td, .sidebar-toggle, .selected-filters .btn, .cache-preview-header, .cache-preview-attributes .geocache-owner, .cache-activity-log, .cache-preview-activities > header, .marker-label, .pages .action, .ipsQuote, #elSearchExpanded .ipsMenu_title, #elSearchExpanded .ipsSideMenu_list, .bonus-round, .level-section .title, .level-section .level-description, .during-event-view .promo-bot, .gc-checkbox-control, .page-header, .page-content, article.post, .sidebar-area .widget, nav.pagination, .author-profile, .post-navigation, .entry-header, .content-area .widget-title, .sidebar-area .widget-title, .css-ef5nic .rc-md-editor, .rc-md-editor .rc-md-navigation {
+    
+    .CacheDetailNavigation, span.favorite-container, span.favorite-container-open, .CacheInformationTable, .Note, .InformationWidget .Callout, .LogsTable, #cpConvoPanelFeed, .activity-item, #cpMsgEditor, .feedback-modal-content, .columns .column, .ui-widget-content, table.Table td, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, .layout-callout .callout, .hax-profile .profile-panel, .headerContainer, .treasure-modal-content {
+        background-color: var(--background-2);
+        color: var(--foreground);
+    }
+    
+    .CacheInformationTable .LocationData, .CacheDetailNavigation ul, .CacheDetailNavigationWidget .WidgetBody, .edit-inline .formatted:hover, .edit-inline .formatted:active, .LogImagesTable, .markdown-output .LogImagesTable, .conversation-panel .activity-item:focus, .conversation-panel .activity-item:hover, .qtip-light, .css-tl06my .cache-guide-steps li, .PocketQueryListTable tr.TableFooter td, .treasure-progress-container {
+        background-color: var(--background-3);
+        color: var(--foreground);
+    }
+    
+    .panel-header, #cpMsgLogHead, #cpTextContent, #cpAttachmentUpload>div, #cpEditControls, table.Table tr.TertiaryRow td, .TertiaryRow, table.Table tr td.TertiaryRow, .SeekCacheWidget .WidgetBody, .HideCacheWidget .WidgetBody, .GeoTourAwardsWidget, .ResourcesWidget, .prev-profile-gallery.WidgetBody, .pq-info-wrapper, .pq-legend, .validation-form-wrapper, .contentBox, div.favorite-dropdown, div.rating-dropdown {
+        background-color: var(--background-2);
+        color: var(--foreground);
         border-color: var(--border);
     }
     
-    .rc-md-editor .rc-md-divider {
-        background-color: var(--border);
+    .panel-header, #cpMsgLogHead, .header-action-link, .feedback-option-card, .close-button, .hax-tabs li a, .checkbox span:before, .create-new-card, .pagination .current.prev, .pagination .current.next{
+        background-color: var(--background-3);
+        color: var(--foreground);
+        border-color: var(--border);
     }
-
-    .hide-page-aside select, .gc-add-to-list .create-new-list-form-section, #gc-search-typeahead-form {
-        border-color: var(--border-input);
+    
+    #cpMsgEditor > div {
+        border-color: var(--border);
     }
-
-    .HowToVolunteer .Banner, .qtip-content a:link:hover, .qtip-content a:visited:hover {
+    
+    .minorCacheDetails, .markdown-output p, .upvotes button, .upvotes button svg, .minorDetails, .minorDetails a, .BreadcrumbWidget, .BreadcrumbWidget a, .BreadcrumbWidget a:visited, .InformationWidget, .listhub-table .list-actions a:not(.list-action-menu a), .listhub-table .list-actions button:not(.list-action-menu button), .signature-treasures-section .section-title, .shareable-header .BreadcrumbWidget p, .plans-page .BreadcrumbWidget p, .shareable-header .BreadcrumbWidget .link-separator, .plans-page .BreadcrumbWidget .link-separator, .feedback-chooser-subtitle, .feedback-option-subtitle, .btn.btn-secondary, .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a:link.ui-button, a:visited.ui-button, .ui-button, .hax-profile .profile-meta .meta-label, .hax-profile .profile-actions a, .contentBox .listItem a, footer, .add-list li button, .watchlist li button, .treasure-modal-subtitle, .treasure-collection-count, .treasure-collection-name {
+        color: var(--foreground);
+    }
+    
+    h1, h2, h3, h4, h5, h6, .cacheDetailsTitle, .edit-cache-coordinates, .InformationWidget h3, .listhub-table .list-name-cell a, .btn-icon, #cpMsgLogHead h1, .shareables-settings-header h2, .feedback-option-title, .alert, .create-new-title, .buttonField div, .buttonField .imageBtn, .treasure-modal-title {
+        color: var(--foreground-2);
+    }
+    
+    a.CoordInfoLink {
+        color: var(--foreground) !important;
+    }
+    
+    #fancybox-content {
+        border-color: transparent;
+    }
+    
+    .CacheDetailNavigation button:hover, *[class*="list-details-"] td div {
+        background-color: transparent;
+    }
+    
+    header[class*="search-map-page-"], header[class*="search-map-page-"] .filler {
         background-color: var(--background-2);
+        color: var(--foreground-2);
+        
+        h1, .status, .status-and-type, .more-info-link {
+            color: var(--foreground-2);
+        }
     }
-
-    .Note {
-        background-color: var(--background-4);
+    
+    *[class*="search-map-page-"] {
+        ul button {
+            background-color: var(--background-3);
+            color: var(--foreground-2);
+        }
+        
+        .cache-preview-activities {
+            background-color: var(--background-2);
+        }
     }
-
-    .Disclaimer {
-        background-color: var(--table-header);
+    
+    *[class*="search-results-"], *[class*="search-map-page-"] {
+        color: var(--foreground);
     }
-
-    .gc-checkbox {
-        box-shadow: 0 0 0 3px black;
+    
+    *[class*="search-map-page-"] .map-control, .leaflet-control-container .leaflet-bottom .leaflet-control-attribution {
+        background-color: var(--background);
     }
-
-    .gc-labeled-radio-input input[type=radio] + i, .gc-toggle, .gc-toggle::after, .gc-checkbox input + span::before, .checkbox input + span::before, .checkbox span:before, .radio span:before, .toggle-handle:after, .noUi-handle, .gc-radio-control i, .rc-slider-handle, .gc-checkbox-v2 input + span::before {
+    
+    *[class*="search-results-"][class*="-multiValue"], *[class*="search-map-page-"][class*="-multiValue"] {
         background-color: var(--background-3);
     }
-
-    .gc-toggle:hover::after, .checkbox:hover span:before, .checkbox input[type="checkbox"]:focus ~ span:before, .radio:hover input[type="radio"] + span:before, .radio input[type="radio"]:focus + span:before, .toggle-handle:hover::after, .toggle-handle:focus::after, .noUi-handle, .checkbox, .checkbox:hover, #search-filters .checkbox, #search-filters .checkbox:hover, .gc-radio-control:hover i {
-        box-shadow: none;
+    
+    *[class*="listhub-"] {
+        .list-action-cta, .list-action-cta.delete-cta {
+            color: var(--foreground) !important;
+        }
+            
+        li, li button, li svg {
+            color: var(--foreground);
+        }
     }
-
-    .reveal-modal.search-filters .modal-body .segmented-control .checkbox input[type='checkbox']:checked + .label, .reveal-modal.search-filters .modal-body .segmented-control .checkbox input[type='checkbox']:checked:focus + .label {
-        background: var(--main) !important;
-        color: var(--foreground-2) !important;
+    
+    .shareables-howitworks-dropdown {
+        background-color: var(--background-3) !important;
     }
-
-    .reveal-modal.search-filters .modal-body .segmented-control .checkbox input[type='checkbox'] + .label, .reveal-modal.search-filters .modal-body .segmented-control .checkbox input[type='checkbox']:focus + .label {
-        background: var(--background-2) !important;
-        color: var(--foreground) !important;
+    
+    .filter-group .option-icon {
+        color: var(--background);
     }
-
-    table.Table {
-        border-color: var(--table-border);
+    
+    .Disclaimer, table.Table th, td.TableHeader, th.TableHeader {
+        background-color: var(--warn-bg);
     }
-
-    table.Table th, td.TableHeader, th.TableHeader, table.Table tfoot td, .PublicProfile table.Table tfoot td, .ProfileStats table.Table th, .ProfileStats table.Table tfoot td {
-        background-color: var(--table-header);
-        border-color: var(--table-border);
+    
+    .qtip-light.qtip-shadow {
+        filter: drop-shadow(0 0 4px black);
     }
-
-    table.Table td, .TrackableItemLogTable .travel-log-table-header {
-        background-color: var(--table-background);
-        color: var(--foreground);
-        border-color: var(--table-border);
+    
+    .page-container {
+        background-color: var(--background) !important;
     }
-
-    table.Table tr.AlternatingRow td, table.Table tr td.AlternatingRow, #TrackableDetails ~ table.TrackableItemLogTable tr.AlternatingRow, #TrackableDetails ~ table.Table tr.AlternatingRow td, #TrackableDetails ~ table.TrackableItemLogTable tr.AlternatingRow .travel-log-table-header, #TrackableDetails ~ table.Table tr.AlternatingRow td .travel-log-table-header, table.Table tr.TertiaryRow td, .TertiaryRow, table.Table tr td.TertiaryRow, .ipsDataList.ipsDataList_zebra .ipsDataItem:not( .ipsDataItem_selected):not( .ipsModerated):not( .ipsDataItem_new):not( .ipsDataItem_success):not( .ipsDataItem_warning):not( .ipsDataItem_error):not( .ipsDataItem_info):not( .ipsDataItem_status):nth-child(even), .ipsQuote_citation {
-        background-color: var(--table-background-alt);
-        border-color: var(--table-border);
-    }
-
-    .flatpickr-day.disabled, .flatpickr-day.disabled:hover, .flatpickr-day.nextMonthDay, .flatpickr-day.notAllowed, .flatpickr-day.notAllowed.nextMonthDay, .flatpickr-day.notAllowed.prevMonthDay, .flatpickr-day.prevMonthDay, .filter-options-content .count, .opc-block-summary .mark .value, .gc-pagination .pagination .break a {
-        color: var(--foreground-disabled);
-    }
-
-    .user-typeahead-list, .post-feed .post-item {
-        box-shadow: 0 0 13px black;
-    }
-
-    span.favorite-rank {
-        background-color: hsl(216, 95%, 46%);
-    }
-
-    span.favorite-rank[title="0"] {
-        background-color: hsl(216, 95%, 26%);
-    }
-
-    .LogsTable, .ui-widget-header, .hero .backdrop, .noUi-target {
-        background-color: transparent;
-    }
-
-    .pagination-controls .pagination-control:hover, .cache-preview-attributes .attribute-box, .ipsCustomInput input[type="checkbox"]:checked + span:after, .site-title a, .site-title a:hover {
-        color: var(--main);
-    }
-
-    mark {
+    
+    .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
         background-color: var(--main);
     }
-
-    .gc-gauge, .list-favorites .section-meta .favorites-meta-progress .gc-gauge, .page-footer, .marker-label, .cache-preview-attributes .attribute-box, .typeahead-item.active, .gc-autocomplete .gc-autocomplete-menu li.highlighted, .gc-autocomplete .gc-autocomplete-menu li:hover, .lang-dropdown-btn, .layer-control-options ul li:hover, .layer-control-options ul li.is-selected:hover {
-        background-color: var(--main-dark);
-    }
-
-    img[src="/images/attributes/attribute-blank.png"] {
-        display: none;
+    
+    .alert.alert-success {
+        background-color: var(--success-bg);
     }
     
-    .resize-sensor {
-        display: none !important;
+    /* - HTML Editor */
+    .cke_inner, .cke .cke_bottom {
+        background-color: var(--background);
     }
-
-    .zoom-control button:disabled {
-        filter: grayscale(1);
+    
+    .cke .cke_top {
+        background-color: var(--background-2);
+        border-color: transparent;
     }
-
-    #fancybox-outer, .fancybox-title-inside {
-        background: var(--background-2);
+    
+    .cke .cke_reset_all, .cke .cke_reset_all *, .cke .cke_reset_all a, .cke .cke_reset_all textarea {
         color: var(--foreground);
     }
-
-    #fancybox-content, #CybotCookiebotDialog {
-        border-color: var(--background-2);
-    }
-
-    #fancybox-overlay {
-        background: var(--background-4) !important;
-    }
-
-    .pagination .current.prev, .pagination .current.next {
-        background: var(--background-4);
-    }
-
-    .pagination .current {
-        background: var(--main-dark);
-    }
-
-    .pagination a, .pagination .current, .opc-progress-bar-item._active > span:after, .noUi-target, #gc-footer .language-popover, .ipsCustomInput input:checked + span {
-        border-color: var(--main);
-    }
-
-    #gc-footer .language-popover::before {
-        border-top-color: var(--main);
-    }
-
-    .opc-progress-bar-item:before, .opc-progress-bar-item > span:before, .opc-progress-bar-item > span:after, .ipsStream .ipsStreamItem_contentType {
-        border-color: var(--background-3);
-    }
-
-    .pop-modal.sit-left:after, .cssfilters .pop-modal.sit-left:before {
-        border-left-color: var(--background-2);
-    }
-
-    html[dir="ltr"] .ipsStream.ipsStream_withTimeline {
-        border-left-color: var(--background-3);
+    
+    .cke .cke_button.cke_button__source.cke_button_off:hover {
+        background-color: var(--background-3);
     }
     
-    .css-1hbp4fm .arrow {
-        border-top-color: var(--background-3);
-    }
-
-    .ipsMenu.ipsMenu_bottomCenter:before, .customer-welcome ul:before, .ipsNavBar_active__identifier {
-        border-bottom-color: var(--background-3);
-    }
-
-    .ipsMenu.ipsMenu_bottomCenter:after {
-        border-bottom-color: var(--background-2);
-    }
-
-    html[dir="ltr"] .ipsStream_withTimeline .ipsStreamItem.ipsStreamItem_contentBlock:before, html[dir="ltr"] .ipsFollow .ipsCommentCount:after {
-        border-right-color: var(--background-3);
-    }
-
-    html[dir="ltr"] .ipsStream_withTimeline .ipsStreamItem:after {
-        border-right-color: var(--background-2);
-    }
-
-    .solution-error, .DisclaimerWidget {
-        background-color: var(--error-bg);
-        border-color: var(--error);
-    }
-
-    .widget.block.block-static-block span[style*="color: #000000"] {
-        color: var(--foreground) !important;
-    }
-
-    .level-section .level-description .inner, .bonus-round .inner {
-        background: #303030bb;
-        padding: 0.5em;
-        box-shadow: 0 0 10px black;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-    }
-
-    .floating-header .content-wrapper, .floating-footer .content-wrapper {
-        background-color: rgba(48, 48, 48, .9);
-    }
-    
-    .layer-control-options ul li.is-selected {
-        background-color: #0a1f1599;
-    }
-    
-    #UtilityNav [class*=Log]:hover {
-        background-color: transparent;
-        filter: brightness(1.5);
-    }
-
     /* Image Replacement */
+    
     /* - General Images */
-    .btn-settings, .close-reveal-modal, .menu a svg, .menu form svg, .message__owner svg, .flatpickr-next-month, .flatpickr-prev-month, .icon-svg-fill.charcoal, .icon-svg-fill.tempest, img[src="/account/app/ui-icons/icons/global/gps.svg"], .feature-list .feature-box svg, .pq-legend li img, .drafts-empty .media-left img, .cke .cke_button_off:not(.cke_button__source) .cke_button_icon:not(:hover), .cke .cke_button_disabled:not(.cke_button__source) .cke_button_icon, .treasure-filter-tool-tip, .cache-attributes-filter-tool-tip, .responsive-table-menu button.toggle:not(:hover)::after, .search-results-table th.sort-column.sort-asc a:after, .search-results-table th.sort-column.sort-desc a:after, .-sort-asc div::after, .-sort-desc div::after, #pnlLazyLoad img, .main-navigation .search-field, .game-board, .game-board-grid, .upvotes button svg, .tooltip-icon, img[src="/Content/images/al-logo-text.svg"], #ctl00_ContentBody_Waypoints img, .VolunteerTypes img, .HowToVolunteer .Banner img {
-        filter: invert(100%) hue-rotate(180deg);
+    .cke_hidpi .cke_button_icon, .icon-svg-fill.storm, .breadcrumb-chevron, .header-action-link img, .shareables-howitworks-dropdown img, img[src*="/account/app/ui-icons/icons/"] {
+        filter: invert(1) hue-rotate(180deg);
     }
     
     img[src*="../ImgGen/seek/CacheInfo.ashx"] {
         filter: invert(100%) hue-rotate(320deg);
     }
     
-    svg[aria-label="Premium"] {
+    svg[aria-label="Premium"], svg[aria-label="Premium-only cache"] {
         filter: invert(100%) hue-rotate(180deg) contrast(0.8) brightness(1.5);
     }
-
-    img[src="/images/icons/16/write_log.png"] {
-        content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAGFBMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIyJiIw+hxFcAAAAB3RSTlMA3+nVDAkPyiX3GwAAAC1JREFUCNdjYGBmDmQKZmBgYCwHgUIGBnYVFRVVsXIgAyyCwihgAALqiyBsBwCJEx+5QTfGCwAAAABJRU5ErkJggg==');
-    }
-
-    img[src="/images/icons/16/premium_only.png"] {
-        content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAS1BMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIw+rxmOAAAAGHRSTlMA4fPRek8t5jQj6thkKe3MinNaSQqWPBuBUzv+AAAAfElEQVQY012PCQ7DIAwEzWXOpEmbtvv/l9ZO5CJlQAgYrWWT8uSSuST64+BlBXv6jouezRvhzDtMnNRhNe+xiNuASlQ8NhK+ewJWJmqAj4DsXTMHsb8+XJSzaQRAGuMTMwQplQImj9e9j5MczPc5y4qm3kiVc100Pzns8gMXkQsDst3h6gAAAABJRU5ErkJggg==');
-    }
-
-    .edit-cache-coordinates {
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAIVBMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIxSN8eiAAAACnRSTlMAH+LeusGwlSWKVsCw7AAAAEBJREFUCNdjgACxRAjNaLUEwmBdtQwiIKilCGYIK4oKQFQsEoAIrFoEFVilSKQAC1SAoWUWRIChKEQAwlBvgNAAJj4PyjVdJ0sAAAAASUVORK5CYII=');
-    }
-
-    .CacheDetailNavigation a[href*="gallery.aspx"] {
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAG1BMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIxDUsYsAAAACHRSTlMAfnM8GAxpVz9QQZIAAABBSURBVAjXY2Bg4OgAAQYo4IAJcMAEOKACIAZYAMJwcoAyNBKgjPAACMMAqoaxkcEAzODoEGyEMCDGwMyB241gAABo4xQG5c64OQAAAABJRU5ErkJggg==');
-    }
-
-    .CacheDetailNavigation a[href*="watchlist.aspx"] {
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAARVBMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIxj3JfuAAAAFnRSTlMAFt0zA8u8taTo0ap4UfOKY1gf5JlFLcG1ogAAAFNJREFUGNO9yccRgCAUQMH3A0nAgEr/pTr24LjX5R8xrFPzMUbPOtcQqUnAwpzBQNJFywCp9wSQd+4FkNO9CLAYrgdSG7Qq7O9aLLo5+KYlGl94ADc0AnWyT1fmAAAAAElFTkSuQmCC');
-    }
-
-    .CacheDetailNavigation span[data-href*="mark.aspx"] {
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAFVBMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIx+2EQwAAAABnRSTlMAtPB+59daYNjkAAAAJklEQVQI12NgFWNgSEtLc2BggjASKGcwG0AZZslQBpAiwGCFMBwAyEwfLx6SuIMAAAAASUVORK5CYII=');
-    }
-
-    #Print .label {
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAFVBMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIx+2EQwAAAABnRSTlMA3/PqPCFqP2qHAAAAPElEQVQI12PAA9TSwCCJIQ0C3GCMNCQGRCmQwQbiJ6QxmLGBBBISGRggIkAORIQBWQSMoCJsAlAGYwADAL16GDVnJb9iAAAAAElFTkSuQmCC');
-    }
-
-    a.DrivingDirections {
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAALVBMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIye/K/0AAAADnRSTlMApLGZBtrPHxXkwz8zDysn2/YAAABiSURBVAjXLcixDYAwDETRQ0KCKsoEGSFihgzCCGzBGozAONS2KChANwM25ldfD1bL+OqrxjQyB5D6w7XnADnU4QbGOaNSgGFTFEqSlSc6m2fhBBRJNAA6GwejAKMAJ4MghxdQ7ytlqtjUZwAAAABJRU5ErkJggg==');
-    }
-
-    #Download .label {
-        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAACJiIxc10SIAAAAAXRSTlMAQObYZgAAACBJREFUCNdjgADmBgTif8DAfgDEeMjH8ICP4f8/KAIDAOLVDBq3TFA1AAAAAElFTkSuQmCC');
+    
+    img[src="/images/attributes/attribute-blank.png"] {
+        display: none;
     }
     
-    /* - Image Magnifying Glass */
-    .UserSuppliedContent img.Pointer {
-        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAMAAABhEH5lAAAAclBMVEUAAAD////t7e3h4eGrq6vy8vLW1tbCwsJERERAQEAcHBwRERH29vbo6Ojl5eXS0tK4uLiXl5eTk5OIiIiBgYF3d3dpaWllZWVYWFhPT09KSko6OjopKSknJycKCgoGBgb6+vrq6urZ2dnX19fDw8OAgICR4w/wAAAAAXRSTlMAQObYZgAAAH1JREFUGNONytcKhTAURNFMqib2fq23+f+/KEROBJ+clw2LYc/3MgDkdMG2A4U0UMP1gR5X5nqeLET/9+jboiRCsfna9BtInnXiF8isvgvPiSR63woN0aQ+rXVzlaBjtEEhFRyAiILNpdZ50wlkZLQ4A49vFnHU7P6rLXu4A78zBQ9tJqN3AAAAAElFTkSuQmCC");
+    .cache-guide-wrapper {
+        background: url(https://d1gkberomxrum0.cloudfront.net/2023/05/16121421/hac-geocaching-mountains%403x.png), linear-gradient(to top, rgb(117, 152, 206) 0%, #e7e7e7 75%);
+    }
+    
+    .cache-guide-wrapper section {
+        backdrop-filter: invert(1) hue-rotate(180deg);
     }
 
     /* - Container Sizes */
@@ -612,6 +545,44 @@
     img[src="/images/stars/stars5.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAANCAMAAAAtxpZ2AAAAM1BMVEUAAAACh00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00VAEbNAAAAEHRSTlMAIvVE43EIE8/FqZmRii5b6ZpifwAAAHdJREFUKM+Ny0kOAzEIRFEGDz039z9tLKOkvEv9DQ8kJHueOQiD6L5Zg6gU0iDyCKe9sveuekQcqgP/nCXHp7wWv4zwkr0iun23TQk7qDJqZ25nY7xy1ixG1jiDmcfMOYPZFVarxcUZzMquIroXzuBMa86qlNfzB5yYEeEqER5uAAAAAElFTkSuQmCC');
     }
+    
+    /*
+    img[src="/images/icons/16/write_log.png"] {
+        content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAGFBMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIyJiIw+hxFcAAAAB3RSTlMA3+nVDAkPyiX3GwAAAC1JREFUCNdjYGBmDmQKZmBgYCwHgUIGBnYVFRVVsXIgAyyCwihgAALqiyBsBwCJEx+5QTfGCwAAAABJRU5ErkJggg==');
+    }
+
+    img[src="/images/icons/16/premium_only.png"] {
+        content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAS1BMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIw+rxmOAAAAGHRSTlMA4fPRek8t5jQj6thkKe3MinNaSQqWPBuBUzv+AAAAfElEQVQY012PCQ7DIAwEzWXOpEmbtvv/l9ZO5CJlQAgYrWWT8uSSuST64+BlBXv6jouezRvhzDtMnNRhNe+xiNuASlQ8NhK+ewJWJmqAj4DsXTMHsb8+XJSzaQRAGuMTMwQplQImj9e9j5MczPc5y4qm3kiVc100Pzns8gMXkQsDst3h6gAAAABJRU5ErkJggg==');
+    }
+
+    .edit-cache-coordinates {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAIVBMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIxSN8eiAAAACnRSTlMAH+LeusGwlSWKVsCw7AAAAEBJREFUCNdjgACxRAjNaLUEwmBdtQwiIKilCGYIK4oKQFQsEoAIrFoEFVilSKQAC1SAoWUWRIChKEQAwlBvgNAAJj4PyjVdJ0sAAAAASUVORK5CYII=');
+    }
+
+    .CacheDetailNavigation a[href*="gallery.aspx"] {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAG1BMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIxDUsYsAAAACHRSTlMAfnM8GAxpVz9QQZIAAABBSURBVAjXY2Bg4OgAAQYo4IAJcMAEOKACIAZYAMJwcoAyNBKgjPAACMMAqoaxkcEAzODoEGyEMCDGwMyB241gAABo4xQG5c64OQAAAABJRU5ErkJggg==');
+    }
+
+    .CacheDetailNavigation a[href*="watchlist.aspx"] {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAARVBMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIxj3JfuAAAAFnRSTlMAFt0zA8u8taTo0ap4UfOKY1gf5JlFLcG1ogAAAFNJREFUGNO9yccRgCAUQMH3A0nAgEr/pTr24LjX5R8xrFPzMUbPOtcQqUnAwpzBQNJFywCp9wSQd+4FkNO9CLAYrgdSG7Qq7O9aLLo5+KYlGl94ADc0AnWyT1fmAAAAAElFTkSuQmCC');
+    }
+
+    .CacheDetailNavigation span[data-href*="mark.aspx"] {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAFVBMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIx+2EQwAAAABnRSTlMAtPB+59daYNjkAAAAJklEQVQI12NgFWNgSEtLc2BggjASKGcwG0AZZslQBpAiwGCFMBwAyEwfLx6SuIMAAAAASUVORK5CYII=');
+    }
+
+    #Print .label {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAFVBMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIx+2EQwAAAABnRSTlMA3/PqPCFqP2qHAAAAPElEQVQI12PAA9TSwCCJIQ0C3GCMNCQGRCmQwQbiJ6QxmLGBBBISGRggIkAORIQBWQSMoCJsAlAGYwADAL16GDVnJb9iAAAAAElFTkSuQmCC');
+    }
+
+    a.DrivingDirections {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAALVBMVEUAAACJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIyJiIye/K/0AAAADnRSTlMApLGZBtrPHxXkwz8zDysn2/YAAABiSURBVAjXLcixDYAwDETRQ0KCKsoEGSFihgzCCGzBGozAONS2KChANwM25ldfD1bL+OqrxjQyB5D6w7XnADnU4QbGOaNSgGFTFEqSlSc6m2fhBBRJNAA6GwejAKMAJ4MghxdQ7ytlqtjUZwAAAABJRU5ErkJggg==');
+    }
+
+    #Download .label {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAACJiIxc10SIAAAAAXRSTlMAQObYZgAAACBJREFUCNdjgADmBgTif8DAfgDEeMjH8ICP4f8/KAIDAOLVDBq3TFA1AAAAAElFTkSuQmCC');
+    }
+    */
 }
 
 @-moz-document domain("waymarking.com") {
@@ -766,6 +737,8 @@
         --user-link: var(--link);
         --geo-link: var(--main);
         --text-gradient: linear-gradient(var(--background), var(--background-3));
+        --warning-bg: var(--warn-bg);
+        --warning-edge: var(--warn);
     }
     
     table#rk, #inputArea {
@@ -866,6 +839,11 @@
 
 @-moz-document domain("project-gc.com") {
      /* -=- Project-GC Styling -=- */
+    body {
+        /* Project-GC uses an !important flag...why...? */
+        color: var(--foreground) !important;
+    }
+    
     div#footer, #pgcMainMenu.navbar-pgc, .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td, #top, .qam-login-bar, .qa-main-wrapper, .modal-content, .sidebar-content {
         background: var(--background);
         border-color: var(--border);
