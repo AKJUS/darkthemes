@@ -3,7 +3,7 @@
 @namespace      queengooborg
 @author         Vinyl Da.i'gyu-Kazotetsu [https://queengoob.org]
 @description    A dark theme for the Geocaching.com website, as well as a few other related websites (Waymarking.com, GeoCheck.org, GeoChecker.com, Certitudes.org, PathTags.com, and Project-GC.com).  Colors are adjustable via the variables set on :root.  https://www.queengoob.org/darkthemes
-@version        4.0.0
+@version        4.0.1
 @license        GPL-3.0
 ==/UserStyle== */
 
@@ -60,11 +60,15 @@
         color: var(--foreground);
     }
 
-    input, textarea, .gc-textfield input, .gc-textfield textarea, input[type="number"], input[type="password"], input[type="text"], textarea.decorated, input[type="email"], .search-field .typeahead-query, .search-field input[type="search"], .search-field input[type="text"], .typeahead-result > ul, .selectize-input, .selectize-control .selectize-input, .selectize-control.single .selectize-input.input-active, .cke .cke_combo_button, .cke .cke_combo_on a.cke_combo_button, .cke .cke_combo_off a.cke_combo_button:hover, .cke .cke_combo_off a.cke_combo_button:focus, .cke .cke_combo_off a.cke_combo_button:active, .cke .cke_button.cke_button__source.cke_button_off, .cke .cke_button.cke_button__source.cke_button_on:hover, .cke .cke_button.cke_button__source.cke_button_on:focus, .cke .cke_button.cke_button__source.cke_button_on:active, .toolbar select, .filters-toggle .btn-show, #inputArea input[type="text"], #inputArea input[type="text"]:focus, input.text, input.title, .select-container, .ipsApp .ipsField_autocomplete, .ipsApp textarea, .ipsApp input[type="text"], .ipsApp input[type="password"], .ipsApp input[type="datetime"], .ipsApp input[type="datetime-local"], .ipsApp input[type="date"], .ipsApp input[type="month"], .ipsApp input[type="time"], .ipsApp input[type="week"], .ipsApp input[type="number"], .ipsApp input[type="email"], .ipsApp input[type="url"], .ipsApp input[type="search"], .ipsApp input[type="tel"], .ipsApp .ipsField_dummy, .ipsCustomInput > span, .ipsCustomInput input:active:checked:not( :disabled) + span, .ipsCustomInput input:active:not( :checked):not( :disabled) + span, .ipsComposeArea_dummy, .cke_wysiwyg_frame, .cke_wysiwyg_div, .ipsAreaBackground_light, #gc-search-typeahead-form .inner-wrapper, .gc-search-typeahead-submit, .inner-wrapper input[type="search"], .btn-default, .btn-external, .form-control, div[class$="-control"], dialog {
+    input, textarea, .gc-textfield input, .gc-textfield textarea, input[type="number"], input[type="password"], input[type="text"], textarea.decorated, input[type="email"], .search-field .typeahead-query, .search-field input[type="search"], .search-field input[type="text"], .typeahead-result > ul, .selectize-input, .selectize-control .selectize-input, .selectize-control.single .selectize-input.input-active, .cke .cke_combo_button, .cke .cke_combo_on a.cke_combo_button, .cke .cke_combo_off a.cke_combo_button:hover, .cke .cke_combo_off a.cke_combo_button:focus, .cke .cke_combo_off a.cke_combo_button:active, .cke .cke_button.cke_button__source.cke_button_off, .cke .cke_button.cke_button__source.cke_button_on:hover, .cke .cke_button.cke_button__source.cke_button_on:focus, .cke .cke_button.cke_button__source.cke_button_on:active, .toolbar select, .filters-toggle .btn-show, #inputArea input[type="text"], #inputArea input[type="text"]:focus, input.text, input.title, .select-container, .ipsApp .ipsField_autocomplete, .ipsApp textarea, .ipsApp input[type="text"], .ipsApp input[type="password"], .ipsApp input[type="datetime"], .ipsApp input[type="datetime-local"], .ipsApp input[type="date"], .ipsApp input[type="month"], .ipsApp input[type="time"], .ipsApp input[type="week"], .ipsApp input[type="number"], .ipsApp input[type="email"], .ipsApp input[type="url"], .ipsApp input[type="search"], .ipsApp input[type="tel"], .ipsApp .ipsField_dummy, .ipsCustomInput > span, .ipsCustomInput input:active:checked:not( :disabled) + span, .ipsCustomInput input:active:not( :checked):not( :disabled) + span, .ipsComposeArea_dummy, .cke_wysiwyg_frame, .cke_wysiwyg_div, .ipsAreaBackground_light, #gc-search-typeahead-form .inner-wrapper, .gc-search-typeahead-submit, .inner-wrapper input[type="search"], .btn-default, .btn-external, .form-control, div[class$="-control"], dialog, .form-select {
         color: var(--foreground-2);
         background-color: var(--background);
         border: var(--border-input);
         border-radius: 4px;
+    }
+    
+    input::placeholder {
+        color: var(--foreground-disabled);
     }
     
     .btn-default {
@@ -258,7 +262,7 @@
         --color-bd-stop-secondary: #b22b14;
     }
 
-    .bg-white, .bg-white\/95, .bg-\[\#f9fafb\] {
+    .bg-white, .bg-white\/95, .bg-white\/90, .bg-\[\#f9fafb\], .bg-\[\#f1f1f1\] {
         background-color: var(--background) !important;
     }
     
@@ -274,11 +278,11 @@
         background-color: var(--background-3) !important;
     }
     
-    .bg-blue-50, .hover\:bg-blue-50:hover {
+    .bg-blue-50, .hover\:bg-blue-50:hover, .bg-blue-100, .hover\:bg-blue-100:hover {
         background-color: var(--notice-bg) !important;
     }
     
-    .bg-green-100, .hover\:bg-green-100:hover {
+    .bg-green-50, .hover\:bg-green-50:hover, .bg-green-100, .hover\:bg-green-100:hover {
         background-color: var(--main-dark) !important;
     }
     
@@ -286,7 +290,7 @@
         color: var(--foreground-2) !important;
     }
     
-    .text-grey-600\/45, .text-gray-600\/45 {
+    .text-grey-600\/45, .text-gray-600\/45, .text-black {
         color: var(--foreground) !important;
     }
     
@@ -318,28 +322,28 @@
     
     /* - General Elements */
     
-    .page-container, #Content, #Content .container, .callout, .layout-callout, #react-select-8-listbox, *[class*="listhub-"], *[class*="list-details-"], .ui-widget-header, #fancybox-outer, .fancybox-title-inside {
+    .page-container, #Content, #Content .container, .callout, .layout-callout, #react-select-8-listbox, *[class*="listhub-"], *[class*="list-details-"], .ui-widget-header, #fancybox-outer, .fancybox-title-inside, .CacheDetailsPage #Content .container {
         background-color: var(--background);
         color: var(--foreground);
     }
     
-    .CacheDetailNavigation, span.favorite-container, span.favorite-container-open, .CacheInformationTable, .Note, .InformationWidget .Callout, .LogsTable, #cpConvoPanelFeed, .activity-item, #cpMsgEditor, .feedback-modal-content, .columns .column, .ui-widget-content, table.Table td, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, .layout-callout .callout, .hax-profile .profile-panel, .headerContainer, .treasure-modal-content {
+    .CacheDetailNavigation, span.favorite-container, span.favorite-container-open, .CacheInformationTable, .Note, .InformationWidget .Callout, .LogsTable, #cpConvoPanelFeed, .activity-item, #cpMsgEditor, .feedback-modal-content, .columns .column, .ui-widget-content, table.Table td, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, .layout-callout .callout, .hax-profile .profile-panel, .headerContainer, .treasure-modal-content, .leaflet-popup-content-wrapper, .leaflet-popup-tip, .leaflet-bar a, .leaflet-control-layers-expanded, .CoordChecker, .process-external-links .close-external {
         background-color: var(--background-2);
         color: var(--foreground);
     }
     
-    .CacheInformationTable .LocationData, .CacheDetailNavigation ul, .CacheDetailNavigationWidget .WidgetBody, .edit-inline .formatted:hover, .edit-inline .formatted:active, .LogImagesTable, .markdown-output .LogImagesTable, .conversation-panel .activity-item:focus, .conversation-panel .activity-item:hover, .qtip-light, .css-tl06my .cache-guide-steps li, .PocketQueryListTable tr.TableFooter td, .treasure-progress-container {
+    .CacheInformationTable .LocationData, .CacheDetailNavigation ul, .CacheDetailNavigationWidget .WidgetBody, .edit-inline .formatted:hover, .edit-inline .formatted:active, .LogImagesTable, .markdown-output .LogImagesTable, .conversation-panel .activity-item:focus, .conversation-panel .activity-item:hover, .qtip-light, .css-tl06my .cache-guide-steps li, .PocketQueryListTable tr.TableFooter td, .treasure-progress-container, table.Table tr.InsetRow td, .InsetRow, table.Table tr td.InsetRow, table.Table tr.AlternatingRow td, .AlternatingRow, table.Table tr td.AlternatingRow, .alternating-row-stacked tr:nth-child(4n+3) td, .alternating-row-stacked tr:nth-child(4n) td {
         background-color: var(--background-3);
         color: var(--foreground);
     }
     
-    .panel-header, #cpMsgLogHead, #cpTextContent, #cpAttachmentUpload>div, #cpEditControls, table.Table tr.TertiaryRow td, .TertiaryRow, table.Table tr td.TertiaryRow, .SeekCacheWidget .WidgetBody, .HideCacheWidget .WidgetBody, .GeoTourAwardsWidget, .ResourcesWidget, .prev-profile-gallery.WidgetBody, .pq-info-wrapper, .pq-legend, .validation-form-wrapper, .contentBox, div.favorite-dropdown, div.rating-dropdown {
+    .panel-header, #cpMsgLogHead, #cpTextContent, #cpAttachmentUpload>div, #cpEditControls, table.Table tr.TertiaryRow td, .TertiaryRow, table.Table tr td.TertiaryRow, .SeekCacheWidget .WidgetBody, .HideCacheWidget .WidgetBody, .GeoTourAwardsWidget, .ResourcesWidget, .prev-profile-gallery.WidgetBody, .pq-info-wrapper, .pq-legend, .validation-form-wrapper, .contentBox, div.favorite-dropdown, div.rating-dropdown, .content-container .form-container, .rc-md-editor .editor-container .sec-md .input, .TrackableItemLogTable .travel-log-table-header {
         background-color: var(--background-2);
         color: var(--foreground);
         border-color: var(--border);
     }
     
-    .panel-header, #cpMsgLogHead, .header-action-link, .feedback-option-card, .close-button, .hax-tabs li a, .checkbox span:before, .create-new-card, .pagination .current.prev, .pagination .current.next{
+    .panel-header, #cpMsgLogHead, .header-action-link, .feedback-option-card, .close-button, .hax-tabs li a, .checkbox span:before, .create-new-card, .pagination .current.prev, .pagination .current.next, .rc-md-editor .rc-md-navigation, .window-box.default, .callout .window-box, .TrackableItemLogTable .AlternatingRow .travel-log-table-header, #TrackableDetails~table.TrackableItemLogTable tr.AlternatingRow, #TrackableDetails~table.Table tr.AlternatingRow td {
         background-color: var(--background-3);
         color: var(--foreground);
         border-color: var(--border);
@@ -349,11 +353,11 @@
         border-color: var(--border);
     }
     
-    .minorCacheDetails, .markdown-output p, .upvotes button, .upvotes button svg, .minorDetails, .minorDetails a, .BreadcrumbWidget, .BreadcrumbWidget a, .BreadcrumbWidget a:visited, .InformationWidget, .listhub-table .list-actions a:not(.list-action-menu a), .listhub-table .list-actions button:not(.list-action-menu button), .signature-treasures-section .section-title, .shareable-header .BreadcrumbWidget p, .plans-page .BreadcrumbWidget p, .shareable-header .BreadcrumbWidget .link-separator, .plans-page .BreadcrumbWidget .link-separator, .feedback-chooser-subtitle, .feedback-option-subtitle, .btn.btn-secondary, .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a:link.ui-button, a:visited.ui-button, .ui-button, .hax-profile .profile-meta .meta-label, .hax-profile .profile-actions a, .contentBox .listItem a, footer, .add-list li button, .watchlist li button, .treasure-modal-subtitle, .treasure-collection-count, .treasure-collection-name {
+    .minorCacheDetails, .markdown-output p, .upvotes button, .upvotes button svg, .minorDetails, .minorDetails a, .BreadcrumbWidget, .BreadcrumbWidget a, .BreadcrumbWidget a:visited, .InformationWidget, .listhub-table .list-actions a:not(.list-action-menu a), .listhub-table .list-actions button:not(.list-action-menu button), .signature-treasures-section .section-title, .shareable-header .BreadcrumbWidget p, .plans-page .BreadcrumbWidget p, .shareable-header .BreadcrumbWidget .link-separator, .plans-page .BreadcrumbWidget .link-separator, .feedback-chooser-subtitle, .feedback-option-subtitle, .btn.btn-secondary, .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a:link.ui-button, a:visited.ui-button, .ui-button, .hax-profile .profile-meta .meta-label, .hax-profile .profile-actions a, .contentBox .listItem a, footer, .add-list li button, .watchlist li button, .treasure-modal-subtitle, .treasure-collection-count, .treasure-collection-name, .Sidebar p, *[class*="css-"][class*="-singleValue"] {
         color: var(--foreground);
     }
     
-    h1, h2, h3, h4, h5, h6, .cacheDetailsTitle, .edit-cache-coordinates, .InformationWidget h3, .listhub-table .list-name-cell a, .btn-icon, #cpMsgLogHead h1, .shareables-settings-header h2, .feedback-option-title, .alert, .create-new-title, .buttonField div, .buttonField .imageBtn, .treasure-modal-title {
+    h1, h2, h3, h4, h5, h6, .cacheDetailsTitle, .edit-cache-coordinates, .InformationWidget h3, .listhub-table .list-name-cell a, .btn-icon, #cpMsgLogHead h1, .shareables-settings-header h2, .feedback-option-title, .alert, .create-new-title, .buttonField div, .buttonField .imageBtn, .treasure-modal-title, .rc-md-editor .rc-md-navigation .button-wrap .button {
         color: var(--foreground-2);
     }
     
@@ -411,7 +415,7 @@
         }
     }
     
-    .shareables-howitworks-dropdown {
+    .shareables-howitworks-dropdown, #coordinate-update-root div[role="dialog"] {
         background-color: var(--background-3) !important;
     }
     
@@ -419,7 +423,7 @@
         color: var(--background);
     }
     
-    .Disclaimer, table.Table th, td.TableHeader, th.TableHeader {
+    .Disclaimer, table.Table th, td.TableHeader, th.TableHeader, .PublicProfile table.Table tfoot td {
         background-color: var(--warn-bg);
     }
     
@@ -437,6 +441,10 @@
     
     .alert.alert-success {
         background-color: var(--success-bg);
+    }
+    
+    .alert.alert-info {
+        background-color: var(--notice-bg);
     }
     
     /* - HTML Editor */
@@ -460,7 +468,7 @@
     /* Image Replacement */
     
     /* - General Images */
-    .cke_hidpi .cke_button_icon, .icon-svg-fill.storm, .breadcrumb-chevron, .header-action-link img, .shareables-howitworks-dropdown img, img[src*="/account/app/ui-icons/icons/"] {
+    .cke_hidpi .cke_button_icon, .icon-svg-fill.storm, .breadcrumb-chevron, .header-action-link img, .shareables-howitworks-dropdown img, img[src*="/account/app/ui-icons/icons/"], .groundspeak-control-findmylocation a {
         filter: invert(1) hue-rotate(180deg);
     }
     
@@ -485,64 +493,64 @@
     }
 
     /* - Container Sizes */
-    img[src="/images/icons/container/micro.gif"] {
+    img[src*="/images/icons/container/micro.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAMAgMAAACLhNyaAAAADFBMVEUgICAYGBgwMDACh00iNdhyAAAAJ0lEQVQI12NAAaKhEOAA54StWgnjRK2ahpUTtgoHR/4aQQ6qpWgAAL5NJ2Pl41LMAAAAAElFTkSuQmCC');
     }
 
-    img[src="/images/icons/container/small.gif"] {
+    img[src*="/images/icons/container/small.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAMAgMAAACLhNyaAAAADFBMVEUgICAYGBgwMDACh00iNdhyAAAAJ0lEQVQI12NAAaKhEOAA54StWgnjRK2ahpUT/h8HR2o6QQ6qpWgAAP35KEKOKQQDAAAAAElFTkSuQmCC');
     }
 
-    img[src="/images/icons/container/regular.gif"] {
+    img[src*="/images/icons/container/regular.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAMAgMAAACLhNyaAAAADFBMVEUgICAYGBgwMDACh00iNdhyAAAAJ0lEQVQI12NAAaKhEOAA54StWgnjxP+/hpUTtgoHR2oaQQ6qpWgAAMeoKsrOGxNQAAAAAElFTkSuQmCC');
     }
 
-    img[src="/images/icons/container/large.gif"] {
+    img[src*="/images/icons/container/large.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAMAgMAAACLhNyaAAAADFBMVEUgICAYGBgwMDACh00iNdhyAAAAJ0lEQVQI12NAAaKhEOAA54T//wvjRK2ajpUTtgoHR2oaQQ6qpWgAAC8OK+SlldmSAAAAAElFTkSuQmCC');
     }
 
-    img[src="/images/icons/container/other.gif"] {
+    img[src*="/images/icons/container/other.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAMAgMAAACLhNyaAAAADFBMVEUgICAYGBgwMDACh00iNdhyAAAAOUlEQVQI12NAAaKhEOAA54StWunw/wOYE7VqGjqHwQDICVsF4fAfQOYADZCaBuUwIHP40TkIS9EAAKVPK56dr6gyAAAAAElFTkSuQmCC');
     }
 
-    img[src="/images/icons/container/virtual.gif"] {
+    img[src*="/images/icons/container/virtual.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAMAgMAAACLhNyaAAAADFBMVEUgICAYGBgwMDACh00iNdhyAAAAQElEQVQI12NAAaKhEOAA54StWulscwbMiVo1bdVKoAyC48zAA+SErYJyGBAcB5CM1DSoDJQDNwAhY3wG2VI0AAA7cijOaT385QAAAABJRU5ErkJggg==');
     }
 
     /* - Stars */
-    img[src="/images/stars/stars1.gif"] {
+    img[src*="/images/stars/stars1.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAANBAMAAADoNnt3AAAAMFBMVEUAAAACh00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch027zhSzAAAAD3RSTlMAI/MS43FEz8WpmZGKWy5GltC1AAAAVklEQVQY02MAgncM+MEZAvIu+KXZ/ifgkTU2lPw/UdgYp/yl/yCgi1OesR4o/V0AtwVcQPkF+Nyn//8Tfuf/x+sB7k+h+hvwyLM0Mkg44JEXBeJAnLIAwLwc0+2/gMYAAAAASUVORK5CYII=');
     }
 
-    img[src="/images/stars/stars1_5.gif"] {
+    img[src*="/images/stars/stars1_5.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAANCAMAAAAtxpZ2AAAAM1BMVEUAAAACh00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00VAEbNAAAAEHRSTlMAIvTjlXEGE0PPxaiKLkVbU7/5lgAAAG1JREFUKM+V0DkSwCAMQ1HLbFmJ73/aZDAQWql6zR8Yi+++Zc7J7LoW03UIi9l4M6u/ibCUApxmJ/ChmagftTl1CzHsI97hFmY5ehxzt3C5tm/nYfbibdXN1tE0JbU4zNXhgAiOMEwN/bEEN7EXjTsFY41FqfcAAAAASUVORK5CYII=');
     }
 
-    img[src="/images/stars/stars2.gif"] {
+    img[src*="/images/stars/stars2.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAANCAMAAAAtxpZ2AAAAM1BMVEUAAAACh00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00VAEbNAAAAEHRSTlMAI5VxRBL28uXgz8Wpii5bw5iayAAAAGtJREFUKM+VzkkOgDAMQ9G4bVpmcv/TgooYvDNvk7+JZLtsWz/UunWl/mkYqP8pEYVa5e7AErEAZ7ztboK9xaPWt9tuCkz3w4RvmyhFl6h1rU+l1pXoCre+vOZcI1HLxhlmmEdqFfJ1M6gVB1v+Bye+DGuFAAAAAElFTkSuQmCC');
     }
 
-    img[src="/images/stars/stars2_5.gif"] {
+    img[src*="/images/stars/stars2_5.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAANBAMAAADoNnt3AAAAMFBMVEUAAAACh00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch027zhSzAAAAD3RSTlMAI/XjlXFECBPPxamKLlvzSlsxAAAAdElEQVQY02MAgrsMCPICAyY4g0QewCJvjEQaYEqz/U9AkB/QZTsapf9vlBCEkRjyj/6DgBKMxJBnnA+U+CkIJTHlGUqAMu5wElOeXf//pwI4iSnPBtSZACcx5Vk+heo7wMkADHnmhQxSBggSA4gCcSCcRAcABTdLGeMRLWcAAAAASUVORK5CYII=');
     }
 
-    img[src="/images/stars/stars3.gif"] {
+    img[src*="/images/stars/stars3.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAANBAMAAADoNnt3AAAAMFBMVEUAAAACh00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch027zhSzAAAAD3RSTlMAIvXjlXFECBPPxamKLltuRbpHAAAAb0lEQVQY02MAgrsMyCQmOINCYgJjFBIDsP1PQCFRQUej9P+NEoJIZAeK/KP/IKCEROqhyDPOBwr9FEQiBVAtKAGKuaOQqIBd//+nAmQS3flAPQkoJCpg+RSq74BCogLmhQxSBigkKhAF4kAUEhkAAHPlVpk3BuOaAAAAAElFTkSuQmCC');
     }
 
-    img[src="/images/stars/stars3_5.gif"] {
+    img[src*="/images/stars/stars3_5.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAANBAMAAADoNnt3AAAAMFBMVEUAAAACh00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch027zhSzAAAAD3RSTlMAI/XjcUQUz8WpmZGKLls2j+WMAAAAdElEQVQY02MAgrsM6OQFBmRwBoM8gCJvjEEaIEuz/g9AJz8gZNMSJf9PFBNEJZHkH/0HASVUEkmesR4o9F0QhUSWZ+ACii1AJVHkGfT/f0InkeVZgXoC0Ehkee5PLvob0EgHJHnmRgYJA3QSCYgAsSMaiQAAgYRjuiTvfvgAAAAASUVORK5CYII=');
     }
 
-    img[src="/images/stars/stars4.gif"] {
+    img[src*="/images/stars/stars4.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAANCAMAAAAtxpZ2AAAAM1BMVEUAAAACh00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00VAEbNAAAAEHRSTlMAIvXjjnFECBPPxZkuqahbAyQ2JQAAAG5JREFUKM+NyUkOwzAMQ1FJnpShDe9/2houWjjWInwL4gOUr/PsQ3aUM99RSnRHFahUr9xd9Q28VHs8t7tMLsOfMX3JTLffsSnTctcODEejetUMnTWqg4qhUh1kWCmGTHWQdhXRPVG90iJDUapnHz73DinWJVNUAAAAAElFTkSuQmCC');
     }
 
-    img[src="/images/stars/stars4_5.gif"] {
+    img[src*="/images/stars/stars4_5.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAANBAMAAADoNnt3AAAALVBMVEUAAAACh00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch020MtN6AAAADnRSTlMAI/VE45Vxz8Wpii4UW0apZRYAAACCSURBVBjTYwCC3QxYSW4GKFiFneSCybtgJ1mg0szvDLCSdmDZMwcl302UEUQnBQUF54HlL70DASUUEgrA8ox1QNZzQQzSHCrPwArkBWAh46DyDHrvHmEjmaDyzEDVBlhIO5j5j9L0ArCQcWoQeZZGBgkHLKSHAEReDIgTMUnGBLAsAMpNci7TbbmGAAAAAElFTkSuQmCC');
     }
 
-    img[src="/images/stars/stars5.gif"] {
+    img[src*="/images/stars/stars5.gif"] {
         content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAANCAMAAAAtxpZ2AAAAM1BMVEUAAAACh00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00Ch00VAEbNAAAAEHRSTlMAIvVE43EIE8/FqZmRii5b6ZpifwAAAHdJREFUKM+Ny0kOAzEIRFEGDz039z9tLKOkvEv9DQ8kJHueOQiD6L5Zg6gU0iDyCKe9sveuekQcqgP/nCXHp7wWv4zwkr0iun23TQk7qDJqZ25nY7xy1ixG1jiDmcfMOYPZFVarxcUZzMquIroXzuBMa86qlNfzB5yYEeEqER5uAAAAAElFTkSuQmCC');
     }
     
@@ -839,6 +847,7 @@
 
 @-moz-document domain("project-gc.com") {
      /* -=- Project-GC Styling -=- */
+    
     body {
         /* Project-GC uses an !important flag...why...? */
         color: var(--foreground) !important;
@@ -892,6 +901,14 @@
     
     #phorum a {
         color: var(--main);
+    }
+    
+    #pgc-navbar {
+        background-color: var(--main-dark);
+    }
+    
+    .nav-link:focus, .nav-link:hover, .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+        color: var(--link-hover);
     }
     
     .ms-container .ms-selectable li.ms-hover, .ms-container .ms-selection li.ms-hover, #phorum div.information, .memtitle, .memproto, dl.reflist dt {
@@ -964,6 +981,13 @@
         background-color: var(--background-2) !important;
         color: var(--foreground) !important;
         border-color: var(--border) !important;
+    }
+    
+    .dropdown-menu {
+        --bs-dropdown-bg: var(--background-2);
+        --bs-dropdown-color: var(--foreground-2);
+        --bs-dropdown-link-color: var(--foreground);
+        --bs-dropdown-link-disabled-color: var(--foreground-disabled);
     }
     
     /* Cookie Consent Bar */
