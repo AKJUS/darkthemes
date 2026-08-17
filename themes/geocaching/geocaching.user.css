@@ -3,7 +3,7 @@
 @namespace      queengooborg
 @author         Vinyl Da.i'gyu-Kazotetsu [https://queengoob.org]
 @description    A dark theme for the Geocaching.com website, as well as a few other related websites (Waymarking.com, GeoCheck.org, GeoChecker.com, Certitudes.org, PathTags.com, and Project-GC.com).  Colors are adjustable via the variables set on :root.  https://www.queengoob.org/darkthemes
-@version        4.0.1
+@version        4.1.0
 @license        GPL-3.0
 ==/UserStyle== */
 
@@ -113,27 +113,27 @@
         background-color: var(--background) !important;
     }
     
-    *[color="white"], *[style*="color:#FFFFFF"], *[style*="color: #FFFFFF"], *[style*="color:#ffffff"], *[style*="color: #ffffff"], *[style*="color:white"] *[style*="color: white"] {
+    [color="white"], [style*="color:#FFFFFF"], [style*="color: #FFFFFF"], [style*="color:#ffffff"], [style*="color: #ffffff"], [style*="color:white"] [style*="color: white"] {
         color: var(--background) !important;
     }
 
-    [color="black"], [color="#000000"], [color="rgb(0, 0, 0)"], [style*="color:black"], [style*="color: black"], [style*="color:#000000"], [style*="color: #000000"], [style*="color:rgb(0, 0, 0)"] [style*="color: rgb(0, 0, 0)"], [color="rgb(34, 34, 34)"], [style*="color:rgb(34, 34, 34)"], [style*="color: rgb(34, 34, 34)"], [color="#111111"], [style*="color:#111111"], [style*="color: #111111"] {
+    [color="black"], [color="#000000"], [color="rgb(0, 0, 0)"], [style*="color:black"], [style*="color: black"], [style*="color:#000000"], [style*="color: #000000"], [style*="color:rgb(0, 0, 0)"] [style*="color: rgb(0, 0, 0)"], [color="rgb(34, 34, 34)"], [style*="color:rgb(34, 34, 34)"], [style*="color: rgb(34, 34, 34)"], [color="#111111"], [style*="color:#111111"], [style*="color: #111111"], [style*="color:Black"], [style*="color:#0D0D0D"] {
         color: var(--foreground) !important;
     }
     
-    *[color="gray"], *[color="#4a4a4a"], *[color="#555555"], *[color="rgb(74, 74, 74)"], *[color="rgb(74 74 74)"], *[color="rgb(58,58,58)"], *[color="rgb(58 58 58)"], *[style*="color:#4a4a4a"], *[style*="color: #4a4a4a"], *[style*="color:#555555"], *[style*="color: #555555"], *[style*="color:rgb(74, 74, 74)"], *[style*="color: rgb(74, 74, 74)"], *[style*="color:rgb(74 74 74)"], *[style*="color: rgb(74 74 74)"], *[style*="color:rgb(58,58,58)"], *[style*="color: rgb(58,58,58)"], *[style*="color:rgb(58 58 58)"], *[style*="color: rgb(58 58 58)"], *[style*="color:gray"] *[style*="color: gray"] {
+    [color="gray"], [color="#4a4a4a"], [color="#555555"], [color="rgb(74, 74, 74)"], [color="rgb(74 74 74)"], [color="rgb(58,58,58)"], [color="rgb(58 58 58)"], [style*="color:#4a4a4a"], [style*="color: #4a4a4a"], [style*="color:#555555"], [style*="color: #555555"], [style*="color:rgb(74, 74, 74)"], [style*="color: rgb(74, 74, 74)"], [style*="color:rgb(74 74 74)"], [style*="color: rgb(74 74 74)"], [style*="color:rgb(58,58,58)"], [style*="color: rgb(58,58,58)"], [style*="color:rgb(58 58 58)"], [style*="color: rgb(58 58 58)"], [style*="color:gray"] [style*="color: gray"] {
         color: var(--foreground-disabled) !important;
     }
 
-    *[style*="background-color:#FFFF00"], *[style*="background-color: #FFFF00"] {
+    [style*="background-color:#FFFF00"], [style*="background-color: #FFFF00"] {
         color: var(--foreground-invert) !important;
     }
     
-    *[style*="background: #f5f5f5;"] {
+    [style*="background: #f5f5f5;"] {
         background-color: var(--background) !important;
     }
     
-    *[style*="background-color:#EEEEEE;"], *[style*="background-color: #EEEEEE;"], *[bgcolor="#EEEEEE"] {
+    [style*="background-color:#EEEEEE;"], [style*="background-color: #EEEEEE;"], [bgcolor="#EEEEEE"] {
         background-color: var(--background-2) !important;
     }
     
@@ -141,16 +141,26 @@
         background-color: var(--background-3) !important;
     }
     
-    *[color="blue"], *[color="DarkBlue"], *[style*="color:blue"], *[style*="color: blue"], *[style*="color:DarkBlue"], *[style*="color: DarkBlue"], *[style*="color:#0000CC"], *[style*="color: #0000CC"], *[style*="color:#000099"], *[style*="color:#000099"], *[style*="color:#0000ff"], *[style*="color: #0000ff"] {
+    [color="blue"], [color="DarkBlue"], [style*="color:blue"], [style*="color: blue"], [style*="color:DarkBlue"], [style*="color: DarkBlue"], [style*="color:#0000CC"], [style*="color: #0000CC"], [style*="color:#000099"], [style*="color:#000099"], [style*="color:#0000ff"], [style*="color: #0000ff"] {
         color: #8282ff !important;
     }
     
-    *[style*="color:#006600"] {
+    [bgcolor="#FF9999"] {
+        background-color: var(--error-bg) !important;
+    }
+    
+    [style*="background-color:yellow"] {
+        background-color: var(--warn-bg) !important;
+    }
+    
+    [style*="color:#006600"] {
         color: var(--main) !important;
     }
 }
 
 @-moz-document domain("geocaching.com") {
+    /* -=- Geocaching.com Styling -=- */
+    
     /* Tailwind CSS Overwrites */
     :root {
         --color-bg-action-banner-success: #e6faeb;
@@ -260,6 +270,31 @@
         --color-bd-neutral-tertiary: #ababab;
         --color-bd-neutral-upgrade-pressed: #c7c7c7;
         --color-bd-stop-secondary: #b22b14;
+        
+        /* Forums */
+        --theme-area_background_reset: var(--background);
+        --theme-light_button: var(--background-3);
+        --theme-section_title: var(--background-3);
+        --box--backgroundColor: var(--background-2);
+        --theme-light_button_font: var(--foreground);
+        --theme-text_color: var(--foreground);
+        --theme-footer_text: var(--foreground);
+        --theme-text_dark: var(--foreground-2);
+        --theme-section_title_font: var(--foreground-2);
+        --theme-main_nav_tab_font: var(--foreground-2);
+        
+        /* Shop */
+        --color-header-bg: var(--background-2);
+        --color-secondary-menu-bg: var(--background-2);
+        --color-secondary-menu-text: var(--foreground-2);
+        --color-body: var(--foreground);
+        --color-header-icons: var(--foreground);
+        --bg-body: var(--background);
+        --color-heading: var(--foreground-2);
+        --color-price: var(--foreground);
+        --color-footer-bg: var(--background-2);
+        --color-drawer-bg: var(--background-3);
+        --color-article-card-bg: var(--background-2);
     }
 
     .bg-white, .bg-white\/95, .bg-white\/90, .bg-\[\#f9fafb\], .bg-\[\#f1f1f1\] {
@@ -327,23 +362,23 @@
         color: var(--foreground);
     }
     
-    .CacheDetailNavigation, span.favorite-container, span.favorite-container-open, .CacheInformationTable, .Note, .InformationWidget .Callout, .LogsTable, #cpConvoPanelFeed, .activity-item, #cpMsgEditor, .feedback-modal-content, .columns .column, .ui-widget-content, table.Table td, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, .layout-callout .callout, .hax-profile .profile-panel, .headerContainer, .treasure-modal-content, .leaflet-popup-content-wrapper, .leaflet-popup-tip, .leaflet-bar a, .leaflet-control-layers-expanded, .CoordChecker, .process-external-links .close-external {
+    .CacheDetailNavigation, span.favorite-container, span.favorite-container-open, .CacheInformationTable, .Note, .InformationWidget .Callout, .LogsTable, #cpConvoPanelFeed, .activity-item, #cpMsgEditor, .feedback-modal-content, .columns .column, .ui-widget-content, table.Table td, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, .layout-callout .callout, .hax-profile .profile-panel, .headerContainer, .treasure-modal-content, .leaflet-popup-content-wrapper, .leaflet-popup-tip, .leaflet-bar a, .leaflet-control-layers-expanded, .CoordChecker, .process-external-links .close-external, .wp-content-section {
         background-color: var(--background-2);
         color: var(--foreground);
     }
     
-    .CacheInformationTable .LocationData, .CacheDetailNavigation ul, .CacheDetailNavigationWidget .WidgetBody, .edit-inline .formatted:hover, .edit-inline .formatted:active, .LogImagesTable, .markdown-output .LogImagesTable, .conversation-panel .activity-item:focus, .conversation-panel .activity-item:hover, .qtip-light, .css-tl06my .cache-guide-steps li, .PocketQueryListTable tr.TableFooter td, .treasure-progress-container, table.Table tr.InsetRow td, .InsetRow, table.Table tr td.InsetRow, table.Table tr.AlternatingRow td, .AlternatingRow, table.Table tr td.AlternatingRow, .alternating-row-stacked tr:nth-child(4n+3) td, .alternating-row-stacked tr:nth-child(4n) td {
+    .CacheInformationTable .LocationData, .CacheDetailNavigation ul, .CacheDetailNavigationWidget .WidgetBody, .edit-inline .formatted:hover, .edit-inline .formatted:active, .LogImagesTable, .markdown-output .LogImagesTable, .conversation-panel .activity-item:focus, .conversation-panel .activity-item:hover, .qtip-light, .css-tl06my .cache-guide-steps li, .PocketQueryListTable tr.TableFooter td, .treasure-progress-container, table.Table tr.InsetRow td, .InsetRow, table.Table tr td.InsetRow, table.Table tr.AlternatingRow td, .AlternatingRow, table.Table tr td.AlternatingRow, .alternating-row-stacked tr:nth-child(4n+3) td, .alternating-row-stacked tr:nth-child(4n) td, .ipsNavBar_secondary, .app-section, .article-tile header {
         background-color: var(--background-3);
         color: var(--foreground);
     }
     
-    .panel-header, #cpMsgLogHead, #cpTextContent, #cpAttachmentUpload>div, #cpEditControls, table.Table tr.TertiaryRow td, .TertiaryRow, table.Table tr td.TertiaryRow, .SeekCacheWidget .WidgetBody, .HideCacheWidget .WidgetBody, .GeoTourAwardsWidget, .ResourcesWidget, .prev-profile-gallery.WidgetBody, .pq-info-wrapper, .pq-legend, .validation-form-wrapper, .contentBox, div.favorite-dropdown, div.rating-dropdown, .content-container .form-container, .rc-md-editor .editor-container .sec-md .input, .TrackableItemLogTable .travel-log-table-header {
+    .panel-header, #cpMsgLogHead, #cpTextContent, #cpAttachmentUpload>div, #cpEditControls, table.Table tr.TertiaryRow td, .TertiaryRow, table.Table tr td.TertiaryRow, .SeekCacheWidget .WidgetBody, .HideCacheWidget .WidgetBody, .GeoTourAwardsWidget, .ResourcesWidget, .prev-profile-gallery.WidgetBody, .pq-info-wrapper, .pq-legend, .validation-form-wrapper, .contentBox, div.favorite-dropdown, div.rating-dropdown, .content-container .form-container, .rc-md-editor .editor-container .sec-md .input, .TrackableItemLogTable .travel-log-table-header, .SecondaryInformationWidget, #cpMsgLogFeed ol {
         background-color: var(--background-2);
         color: var(--foreground);
         border-color: var(--border);
     }
     
-    .panel-header, #cpMsgLogHead, .header-action-link, .feedback-option-card, .close-button, .hax-tabs li a, .checkbox span:before, .create-new-card, .pagination .current.prev, .pagination .current.next, .rc-md-editor .rc-md-navigation, .window-box.default, .callout .window-box, .TrackableItemLogTable .AlternatingRow .travel-log-table-header, #TrackableDetails~table.TrackableItemLogTable tr.AlternatingRow, #TrackableDetails~table.Table tr.AlternatingRow td {
+    .panel-header, #cpMsgLogHead, .header-action-link, .feedback-option-card, .close-button, .hax-tabs li a, .checkbox span:before, .create-new-card, .pagination .current.prev, .pagination .current.next, .rc-md-editor .rc-md-navigation, .window-box.default, .callout .window-box, .TrackableItemLogTable .AlternatingRow .travel-log-table-header, #TrackableDetails~table.TrackableItemLogTable tr.AlternatingRow, #TrackableDetails~table.Table tr.AlternatingRow td, .banner .btn:hover, .banner .btn:focus {
         background-color: var(--background-3);
         color: var(--foreground);
         border-color: var(--border);
@@ -357,7 +392,7 @@
         color: var(--foreground);
     }
     
-    h1, h2, h3, h4, h5, h6, .cacheDetailsTitle, .edit-cache-coordinates, .InformationWidget h3, .listhub-table .list-name-cell a, .btn-icon, #cpMsgLogHead h1, .shareables-settings-header h2, .feedback-option-title, .alert, .create-new-title, .buttonField div, .buttonField .imageBtn, .treasure-modal-title, .rc-md-editor .rc-md-navigation .button-wrap .button {
+    h1, h2, h3, h4, h5, h6, .cacheDetailsTitle, .edit-cache-coordinates, .InformationWidget h3, .listhub-table .list-name-cell a, .btn-icon, #cpMsgLogHead h1, .shareables-settings-header h2, .feedback-option-title, .alert, .create-new-title, .buttonField div, .buttonField .imageBtn, .treasure-modal-title, .rc-md-editor .rc-md-navigation .button-wrap .button, div[data-testid="log-view"], .msg-panel .message-time, #uxViewNewLogLink {
         color: var(--foreground-2);
     }
     
@@ -365,11 +400,15 @@
         color: var(--foreground) !important;
     }
     
+    .thb-secondary-area .thb-item-count {
+        background: var(--foreground-2);
+    }
+    
     #fancybox-content {
         border-color: transparent;
     }
     
-    .CacheDetailNavigation button:hover, *[class*="list-details-"] td div {
+    .CacheDetailNavigation button:hover, *[class*="list-details-"] td div, .thb-widget-title, .custom-select--button, .custom-select--item button {
         background-color: transparent;
     }
     
@@ -415,7 +454,7 @@
         }
     }
     
-    .shareables-howitworks-dropdown, #coordinate-update-root div[role="dialog"] {
+    .shareables-howitworks-dropdown, #coordinate-update-root div[role="dialog"], .ProfileCalendarTable tr:first-child td, .TodayDayStyle {
         background-color: var(--background-3) !important;
     }
     
@@ -435,16 +474,32 @@
         background-color: var(--background) !important;
     }
     
-    .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    .promotion-blocks {
+        --color-bg: var(--background-3) !important;
+        --color-text: var(--foreground-2) !important;
+    }
+    
+    .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover, .upvotes button:not([disabled]):hover {
         background-color: var(--main);
     }
     
-    .alert.alert-success {
+    .conversation-panel .activity-item.selected , .conversation-panel .activity-item.disabled.selected {
+        background-color: var(--main-dark);
+    }
+    
+    .alert.alert-success, .solution-success {
         background-color: var(--success-bg);
+        border-color: var(--success);
     }
     
     .alert.alert-info {
         background-color: var(--notice-bg);
+        border-color: var(--notice);
+    }
+    
+    .solution-error {
+        background-color: var(--error-bg);
+        border-color: var(--error);
     }
     
     /* - HTML Editor */
@@ -476,8 +531,12 @@
         filter: invert(100%) hue-rotate(320deg);
     }
     
-    svg[aria-label="Premium"], svg[aria-label="Premium-only cache"] {
+    svg[aria-label="Premium"], svg[aria-label="Premium-only cache"], img[src*="/images/WptTypes/"], img[src*="/images/icons/icon_"] {
         filter: invert(100%) hue-rotate(180deg) contrast(0.8) brightness(1.5);
+    }
+    
+    .gc-search-results-empty-state img {
+        filter: invert(100%) contrast(0.8);
     }
     
     img[src="/images/attributes/attribute-blank.png"] {
@@ -591,6 +650,45 @@
         background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAACJiIxc10SIAAAAAXRSTlMAQObYZgAAACBJREFUCNdjgADmBgTif8DAfgDEeMjH8ICP4f8/KAIDAOLVDBq3TFA1AAAAAElFTkSuQmCC');
     }
     */
+}
+
+@-moz-document domain("labs.geocaching.com") {
+    /* -=- Adventure Labs Styling -=- */
+    
+    .logs-wrapper .log-content-container .log-date, .MuiInputBase-input, .MuiSvgIcon-root {
+        color: var(--foreground);
+    }
+    
+    .main-profile-panel .username, .main-profile-panel .li-user-toggle, .button-secondary-text-link {
+        color: var(--foreground-2);
+    }
+    
+    .logs-wrapper .epic, .logs-wrapper .error-wrapper, .button-secondary, .landing-page-content {
+        background-color: var(--background-2);
+    }
+    
+    .submenu, .submenu::after, .button-secondary:not(.button-disabled):hover, .MuiPaper-root, .lang-content, footer {
+        background-color: var(--background-3);
+        color: var(--foreground);
+    }
+    
+    header {
+        background-color: var(--main);
+        color: var(--foreground-2);
+    }
+    
+    .button-breezy-light {
+        background-color: var(--notice-bg);
+        color: var(--foreground-2);
+    }
+    
+    .button-breezy-light:not(.button-disabled):hover {
+        background-color: var(--notice);
+    }
+    
+    img[src*="icons/trash-can.svg"], img[src*="al-logo-text.svg"] {
+        filter: invert(1);
+    }
 }
 
 @-moz-document domain("waymarking.com") {
@@ -848,6 +946,37 @@
 @-moz-document domain("project-gc.com") {
      /* -=- Project-GC Styling -=- */
     
+    :root {
+        --bs-body-bg: var(--background);
+        --bs-secondary-bg: var(--background-2);
+        --bs-tertiary-bg: var(--background-3);
+        --bs-body-color: var(--foreground);
+        --bs-secondary-color: var(--foreground-disabled);
+        --bs-border-color: var(--border);
+    }
+    
+    .modal {
+        --bs-modal-color: var(--foreground);
+    }
+    
+    .table {
+        --bs-table-color: var(--foreground);
+    }
+    
+    .popover {
+        --bs-popover-header-bg: var(--background-3);
+    }
+    
+    /* Anti-adblock popup disable */
+    div.fc-ab-root {
+        display: none !important;
+    }
+    
+    body {
+        overflow: initial !important;
+    }
+    /* End */
+    
     body {
         /* Project-GC uses an !important flag...why...? */
         color: var(--foreground) !important;
@@ -862,13 +991,13 @@
         color: var(--foreground);
     }
     
-    #pgcMainMenu.navbar-pgc .navbar-nav>.active>a:hover, #pgcMainMenu.navbar-pgc .navbar-nav>li>a:hover, #pgcMainMenu.navbar-pgc .navbar-nav>li>a:focus, #pgcMainMenu .dropdown-menu, .navbar-default, .well, div.dashboard-card-header, .popover, .table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th, .list-group-item, .pagination>li>a, .pagination>li>span, .input-group-addon, div.well-white, .qa-nav-main, .qa-widget-side, .qa-nav-cat, .qa-footer-bottom-group, .qa-suggest-next, .qa-tag-link, .qa-widget-side .qa-q-view-tag-item, .qa-widget-side>div>a, .qa-nav-sub, .ms-container .ms-selectable, .ms-container .ms-selection, .modal-header, #phorum table.list td, #phorum div.message-body, .memdoc, dl.reflist dd, div.header, .mdescLeft, .mdescRight, .memItemLeft, .memItemRight, .memTemplItemLeft, .memTemplItemRight, .memTemplParams, .leaflet-popup-content-wrapper, .leaflet-popup-tip, .leaflet-control-layers, #phorum #post-body, textarea#cc_ExampleLog, textarea#cc_debugOutput, textarea#cc_fail_errorLog, textarea#cc_fail_scriptOutput, #liveMapButton, .sidebar-tabs, .leaflet-container .leaflet-control-attribution {
+    #pgcMainMenu.navbar-pgc .navbar-nav>.active>a:hover, #pgcMainMenu.navbar-pgc .navbar-nav>li>a:hover, #pgcMainMenu.navbar-pgc .navbar-nav>li>a:focus, #pgcMainMenu .dropdown-menu, .navbar-default, .well, div.dashboard-card-header, .popover, .table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th, .list-group-item, .pagination>li>a, .pagination>li>span, .input-group-addon, div.well-white, .qa-nav-main, .qa-widget-side, .qa-nav-cat, .qa-footer-bottom-group, .qa-suggest-next, .qa-tag-link, .qa-widget-side .qa-q-view-tag-item, .qa-widget-side>div>a, .qa-nav-sub, .ms-container .ms-selectable, .ms-container .ms-selection, .modal-header, #phorum table.list td, #phorum div.message-body, .memdoc, dl.reflist dd, div.header, .mdescLeft, .mdescRight, .memItemLeft, .memItemRight, .memTemplItemLeft, .memTemplItemRight, .memTemplParams, .leaflet-popup-content-wrapper, .leaflet-popup-tip, .leaflet-control-layers, #phorum #post-body, textarea#cc_ExampleLog, textarea#cc_debugOutput, textarea#cc_fail_errorLog, textarea#cc_fail_scriptOutput, #liveMapButton, .sidebar-tabs, .leaflet-container .leaflet-control-attribution, ul.nav-pills.nav-pills-default {
         background: var(--background-2);
         color: var(--foreground);
         border-color: var(--border);
     }
     
-    #pgcMainMenu.navbar-pgc .navbar-nav>.active>a, #pgcMainMenu.navbar-pgc .navbar-nav>.open>a, #pgcMainMenu.navbar-pgc .navbar-nav>.open>a, #pgcMainMenu.navbar-pgc .navbar-nav>.open>a:hover, #pgcMainMenu.navbar-pgc .navbar-nav>.open>a, #pgcMainMenu.navbar-pgc .navbar-nav>.open>a:hover, #pgcMainMenu.navbar-pgc .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus, .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus, .popover-title, .nav-tabs>li>a:hover, .pagination>li>a:hover, .pagination>li>span:hover, .pagination>li>a:focus, .pagination>li>span:focus, .qa-nav-sub-link:hover, .qa-nav-sub-selected, pre, .btn-default:active, .btn-default.active, .jslider .jslider-value, #phorum table.list td.alt, #phorum div.generic, #phorum #thread-options, #phorum pre.bbcode {
+    #pgcMainMenu.navbar-pgc .navbar-nav>.active>a, #pgcMainMenu.navbar-pgc .navbar-nav>.open>a, #pgcMainMenu.navbar-pgc .navbar-nav>.open>a, #pgcMainMenu.navbar-pgc .navbar-nav>.open>a:hover, #pgcMainMenu.navbar-pgc .navbar-nav>.open>a, #pgcMainMenu.navbar-pgc .navbar-nav>.open>a:hover, #pgcMainMenu.navbar-pgc .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus, .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus, .popover-title, .nav-tabs>li>a:hover, .pagination>li>a:hover, .pagination>li>span:hover, .pagination>li>a:focus, .pagination>li>span:focus, .qa-nav-sub-link:hover, .qa-nav-sub-selected, pre, .btn-default:active, .btn-default.active, .jslider .jslider-value, #phorum table.list td.alt, #phorum div.generic, #phorum #thread-options, #phorum pre.bbcode, ul.nav-pills.nav-pills-default a.nav-link.active, #cc_HtmlFeedback {
         background: var(--background-3);
         color: var(--foreground);
     }
@@ -907,7 +1036,11 @@
         background-color: var(--main-dark);
     }
     
-    .nav-link:focus, .nav-link:hover, .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    #cc_HtmlFeedback a {
+        color: var(--link);
+    }
+    
+    .nav-link:focus, .nav-link:hover, .navbar-nav .nav-link.active, .navbar-nav .nav-link.show, #cc_HtmlFeedback a:hover {
         color: var(--link-hover);
     }
     
