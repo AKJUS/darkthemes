@@ -3,7 +3,7 @@
 @namespace      queengooborg
 @author         Vinyl Da.i'gyu-Kazotetsu [https://queengoob.org]
 @description    A dark theme for the Geocaching.com website, as well as a few other related websites (Waymarking.com, GeoCheck.org, GeoChecker.com, Certitudes.org, PathTags.com, and Project-GC.com).  Colors are adjustable via the variables set on :root.  https://www.queengoob.org/darkthemes
-@version        4.1.0
+@version        4.1.1
 @license        GPL-3.0
 ==/UserStyle== */
 
@@ -129,11 +129,11 @@
         color: var(--foreground-invert) !important;
     }
     
-    [style*="background: #f5f5f5;"] {
+    [style*="background: #f5f5f5"], [style*="background:#ffe"] {
         background-color: var(--background) !important;
     }
     
-    [style*="background-color:#EEEEEE;"], [style*="background-color: #EEEEEE;"], [bgcolor="#EEEEEE"] {
+    [style*="background-color:#EEEEEE"], [style*="background-color: #EEEEEE"], [bgcolor="#EEEEEE"] {
         background-color: var(--background-2) !important;
     }
     
@@ -149,7 +149,7 @@
         background-color: var(--error-bg) !important;
     }
     
-    [style*="background-color:yellow"] {
+    [style*="background-color:yellow"], [style*="background-color:#ffff33"] {
         background-color: var(--warn-bg) !important;
     }
     
@@ -372,13 +372,13 @@
         color: var(--foreground);
     }
     
-    .panel-header, #cpMsgLogHead, #cpTextContent, #cpAttachmentUpload>div, #cpEditControls, table.Table tr.TertiaryRow td, .TertiaryRow, table.Table tr td.TertiaryRow, .SeekCacheWidget .WidgetBody, .HideCacheWidget .WidgetBody, .GeoTourAwardsWidget, .ResourcesWidget, .prev-profile-gallery.WidgetBody, .pq-info-wrapper, .pq-legend, .validation-form-wrapper, .contentBox, div.favorite-dropdown, div.rating-dropdown, .content-container .form-container, .rc-md-editor .editor-container .sec-md .input, .TrackableItemLogTable .travel-log-table-header, .SecondaryInformationWidget, #cpMsgLogFeed ol {
+    .panel-header, #cpMsgLogHead, #cpTextContent, #cpAttachmentUpload>div, #cpEditControls, table.Table tr.TertiaryRow td, .TertiaryRow, table.Table tr td.TertiaryRow, .SeekCacheWidget .WidgetBody, .HideCacheWidget .WidgetBody, .GeoTourAwardsWidget, .ResourcesWidget, .prev-profile-gallery.WidgetBody, .pq-info-wrapper, .pq-legend, .validation-form-wrapper, .contentBox, div.favorite-dropdown, div.rating-dropdown, .content-container .form-container, .rc-md-editor .editor-container .sec-md .input, .TrackableItemLogTable .travel-log-table-header, .SecondaryInformationWidget, #cpMsgLogFeed ol, .gc-dropdown div[class*="-menu"], .gc-dropdown div[class*="-menu"] div[class*="-option"]:not(.log-type-option) {
         background-color: var(--background-2);
         color: var(--foreground);
         border-color: var(--border);
     }
     
-    .panel-header, #cpMsgLogHead, .header-action-link, .feedback-option-card, .close-button, .hax-tabs li a, .checkbox span:before, .create-new-card, .pagination .current.prev, .pagination .current.next, .rc-md-editor .rc-md-navigation, .window-box.default, .callout .window-box, .TrackableItemLogTable .AlternatingRow .travel-log-table-header, #TrackableDetails~table.TrackableItemLogTable tr.AlternatingRow, #TrackableDetails~table.Table tr.AlternatingRow td, .banner .btn:hover, .banner .btn:focus {
+    .panel-header, #cpMsgLogHead, .header-action-link, .feedback-option-card, .close-button, .hax-tabs li a, .checkbox span:before, .create-new-card, .pagination .current.prev, .pagination .current.next, .rc-md-editor .rc-md-navigation, .window-box.default, .callout .window-box, .TrackableItemLogTable .AlternatingRow .travel-log-table-header, #TrackableDetails~table.TrackableItemLogTable tr.AlternatingRow, #TrackableDetails~table.Table tr.AlternatingRow td, .banner .btn:hover, .banner .btn:focus, .gc-dropdown div[class*="-menu"] div[class*="-option"]:not(.log-type-option):hover, .gc-dropdown div[class*="-menu"] div[class*="-option"]:not(.log-type-option):focus {
         background-color: var(--background-3);
         color: var(--foreground);
         border-color: var(--border);
@@ -388,7 +388,7 @@
         border-color: var(--border);
     }
     
-    .minorCacheDetails, .markdown-output p, .upvotes button, .upvotes button svg, .minorDetails, .minorDetails a, .BreadcrumbWidget, .BreadcrumbWidget a, .BreadcrumbWidget a:visited, .InformationWidget, .listhub-table .list-actions a:not(.list-action-menu a), .listhub-table .list-actions button:not(.list-action-menu button), .signature-treasures-section .section-title, .shareable-header .BreadcrumbWidget p, .plans-page .BreadcrumbWidget p, .shareable-header .BreadcrumbWidget .link-separator, .plans-page .BreadcrumbWidget .link-separator, .feedback-chooser-subtitle, .feedback-option-subtitle, .btn.btn-secondary, .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a:link.ui-button, a:visited.ui-button, .ui-button, .hax-profile .profile-meta .meta-label, .hax-profile .profile-actions a, .contentBox .listItem a, footer, .add-list li button, .watchlist li button, .treasure-modal-subtitle, .treasure-collection-count, .treasure-collection-name, .Sidebar p, *[class*="css-"][class*="-singleValue"] {
+    .minorCacheDetails, .markdown-output p, .upvotes button, .upvotes button svg, .minorDetails, .minorDetails a, .BreadcrumbWidget, .BreadcrumbWidget a, .BreadcrumbWidget a:visited, .InformationWidget, .listhub-table .list-actions a:not(.list-action-menu a), .listhub-table .list-actions button:not(.list-action-menu button), .signature-treasures-section .section-title, .shareable-header .BreadcrumbWidget p, .plans-page .BreadcrumbWidget p, .shareable-header .BreadcrumbWidget .link-separator, .plans-page .BreadcrumbWidget .link-separator, .feedback-chooser-subtitle, .feedback-option-subtitle, .btn.btn-secondary, .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a:link.ui-button, a:visited.ui-button, .ui-button, .hax-profile .profile-meta .meta-label, .hax-profile .profile-actions a, .contentBox .listItem a, footer, .add-list li button, .watchlist li button, .treasure-modal-subtitle, .treasure-collection-count, .treasure-collection-name, .Sidebar p, *[class*="css-"][class*="-singleValue"], .gc-dropdown div[class*="-option"] {
         color: var(--foreground);
     }
     
@@ -1002,7 +1002,7 @@
         color: var(--foreground);
     }
     
-    .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus, .qa-browse-cat-item, legend, .alert-info, .alert-danger, .alert a, .alert a:visited, h2.groupheader, div#profilestatstabs li:not(.selected), .sidebar-tabs>li {
+    .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus, .qa-browse-cat-item, legend, .alert-info, .alert-danger, .alert a, .alert a:visited, h2.groupheader, div#profilestatstabs li:not(.selected), .sidebar-tabs>li, a.btn {
         color: var(--foreground-2);
     }
     
@@ -1180,6 +1180,10 @@
     
     /* Image Replacement */
     .navbar-header img, img[title="Challenge difficulty"], #phorum div.paging img, #phorum a.icon, .leaflet-bar a, .leaflet-bar a:hover, .leaflet-control-search .search-button, #livemap_filter_geocacheSizes > div {
+        filter: invert(100%) hue-rotate(180deg);
+    }
+    
+    .CodeMirror {
         filter: invert(100%) hue-rotate(180deg);
     }
 }
